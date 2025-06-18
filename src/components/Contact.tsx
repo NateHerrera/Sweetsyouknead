@@ -130,19 +130,15 @@ const Contact: React.FC = () => {
             >
               <Box sx={{ mt: 4 }}>
                 <ContactInfo>
-                  <img src="/location-icon.png" alt="Location" />
-                  <Typography>123 Bakery Street, Sweet City</Typography>
+                  <img src="/images/location-arrow-svgrepo-com.svg" alt="Location" />
+                  <Typography>TBA</Typography>
                 </ContactInfo>
                 <ContactInfo>
-                  <img src="/phone-icon.png" alt="Phone" />
-                  <Typography>(555) 123-4567</Typography>
+                  <img src="/images/email-part-2-svgrepo-com.svg" alt="Email" />
+                  <Typography>sweetsyouknead@gmail.com</Typography>
                 </ContactInfo>
                 <ContactInfo>
-                  <img src="/email-icon.png" alt="Email" />
-                  <Typography>hello@sweetsyouknead.com</Typography>
-                </ContactInfo>
-                <ContactInfo>
-                  <img src="/clock-icon.png" alt="Hours" />
+                  <img src="/images/clock-0900-svgrepo-com.svg" alt="Hours" />
                   <Typography>Mon-Sat: 7am - 7pm</Typography>
                 </ContactInfo>
               </Box>

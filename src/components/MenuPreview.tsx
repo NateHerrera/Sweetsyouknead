@@ -5,21 +5,6 @@ import { styled } from '@mui/material/styles';
 const MenuContainer = styled(Container)(({ theme }) => ({
   padding: theme.spacing(8, 0),
   position: 'relative',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: '4px',
-    background: `repeating-linear-gradient(
-      45deg,
-      ${theme.palette.primary.main},
-      ${theme.palette.primary.main} 10px,
-      ${theme.palette.secondary.main} 10px,
-      ${theme.palette.secondary.main} 20px
-    )`,
-  }
 }));
 
 const MenuItemCard = styled(Card)(({ theme }) => ({

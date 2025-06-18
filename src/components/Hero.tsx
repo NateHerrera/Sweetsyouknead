@@ -1,29 +1,17 @@
 import React from 'react';
 import { Box, Container, Typography, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Logo from './Logo';
 
 const HeroContainer = styled(Box)(({ theme }) => ({
   minHeight: '100vh',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  background: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-    url('https://placehold.co/1920x1080/FFF5E6/8B4513?text=Artisan+Bakery')`,
+  background: `linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+    url('/images/backgroundformainpage.png')`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   position: 'relative',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: 'url("https://placehold.co/100x100/FFF5E6/8B4513?text=*")',
-    opacity: 0.1,
-    pointerEvents: 'none',
-  }
 }));
 
 const ContentContainer = styled(Container)(({ theme }) => ({
@@ -32,6 +20,10 @@ const ContentContainer = styled(Container)(({ theme }) => ({
   zIndex: 1,
   padding: theme.spacing(4),
   maxWidth: '800px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
   '& .hero-title': {
     fontFamily: '"Caveat", cursive',
     fontSize: '3.5rem',
@@ -44,42 +36,29 @@ const ContentContainer = styled(Container)(({ theme }) => ({
     fontSize: '1.8rem',
     color: theme.palette.secondary.main,
     marginBottom: theme.spacing(4),
-  }
+  },
 }));
 
-const DecorativeBorder = styled(Box)(({ theme }) => ({
-  position: 'absolute',
+const Ribbon = styled(Box)(({ theme }) => ({
   width: '100%',
-  height: '100%',
-  pointerEvents: 'none',
-  '&::before, &::after': {
-    content: '""',
-    position: 'absolute',
-    width: '100px',
-    height: '100px',
-    border: `4px solid ${theme.palette.primary.main}`,
-    opacity: 0.2,
-  },
-  '&::before': {
-    top: 20,
-    left: 20,
-    borderRight: 'none',
-    borderBottom: 'none',
-  },
-  '&::after': {
-    bottom: 20,
-    right: 20,
-    borderLeft: 'none',
-    borderTop: 'none',
-  }
+  height: '6px',
+  margin: '0 0 20px 0',
+  background: 'repeating-linear-gradient(135deg, #8B4513, #8B4513 10px, #DEB887 10px, #DEB887 20px)',
+  borderRadius: '2px',
+  boxShadow: '0 1px 2px rgba(0,0,0,0.04)'
+}));
+
+const Logo = styled('img')(({ theme }) => ({
+  width: '300px',
+  height: 'auto',
 }));
 
 const Hero: React.FC = () => {
   return (
     <HeroContainer>
-      <DecorativeBorder />
       <ContentContainer>
-        <Logo />
+        <Logo src="/images/Sweetsyoukneadlogotrans.png" alt="Sweets You Knead Logo" />
+        <Ribbon />
         <Typography variant="h1" className="hero-title">
           Artisan Bakery
         </Typography>

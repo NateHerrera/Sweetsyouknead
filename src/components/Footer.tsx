@@ -39,6 +39,10 @@ const SocialIcon = styled(Link)(({ theme }) => ({
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
     textDecoration: 'none',
   },
+  '& img': {
+    width: '24px',
+    height: '24px',
+  },
 }));
 
 const FooterLink = styled(Link)(({ theme }) => ({
@@ -49,6 +53,17 @@ const FooterLink = styled(Link)(({ theme }) => ({
   },
   display: 'block',
   marginBottom: theme.spacing(1),
+}));
+
+const ContactInfo = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  marginBottom: theme.spacing(1),
+  '& img': {
+    width: '20px',
+    height: '20px',
+    marginRight: theme.spacing(1),
+  },
 }));
 
 const Footer: React.FC = () => {
@@ -79,9 +94,8 @@ const Footer: React.FC = () => {
                 aria-label="Facebook"
               >
                 <img
-                  src="https://placehold.co/32x32/1877F2/FFFFFF?text=f"
+                  src="/images/facebook-color-svgrepo-com.svg"
                   alt="Facebook"
-                  style={{ width: '100%', height: '100%' }}
                 />
               </SocialIcon>
               <SocialIcon
@@ -91,9 +105,8 @@ const Footer: React.FC = () => {
                 aria-label="Instagram"
               >
                 <img
-                  src="https://placehold.co/32x32/E4405F/FFFFFF?text=ig"
+                  src="/images/instagram-1-svgrepo-com.svg"
                   alt="Instagram"
-                  style={{ width: '100%', height: '100%' }}
                 />
               </SocialIcon>
               <SocialIcon
@@ -103,9 +116,8 @@ const Footer: React.FC = () => {
                 aria-label="Twitter"
               >
                 <img
-                  src="https://placehold.co/32x32/1DA1F2/FFFFFF?text=t"
+                  src="/images/twitter-svgrepo-com.svg"
                   alt="Twitter"
-                  style={{ width: '100%', height: '100%' }}
                 />
               </SocialIcon>
             </Box>
@@ -137,18 +149,27 @@ const Footer: React.FC = () => {
             >
               Contact Us
             </Typography>
-            <Typography variant="body2" sx={{ marginBottom: 1 }}>
-              123 Bakery Street
-            </Typography>
-            <Typography variant="body2" sx={{ marginBottom: 1 }}>
-              Sweetville, SV 12345
-            </Typography>
-            <Typography variant="body2" sx={{ marginBottom: 1 }}>
-              Phone: (555) 123-4567
-            </Typography>
-            <Typography variant="body2">
-              Email: hello@sweetsyouknead.com
-            </Typography>
+            <ContactInfo>
+              <img
+                src="/images/location-arrow-svgrepo-com.svg"
+                alt="Location"
+              />
+              <Typography variant="body2">TBA</Typography>
+            </ContactInfo>
+            <ContactInfo>
+              <img
+                src="/images/clock-0900-svgrepo-com.svg"
+                alt="Time"
+              />
+              <Typography variant="body2">Mon-Sat: 7am-7pm</Typography>
+            </ContactInfo>
+            <ContactInfo>
+              <img
+                src="/images/email-part-2-svgrepo-com.svg"
+                alt="email"
+              />
+              <Typography variant="body2">sweetsyouknead@gmail.com</Typography>
+            </ContactInfo>
           </Grid>
         </Grid>
         <Box
