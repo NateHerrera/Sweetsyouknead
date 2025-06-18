@@ -27,7 +27,7 @@ const Logo = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const NavButton = styled(Button)(({ theme }) => ({
+const NavButton = styled(Button)<{ component?: React.ElementType }>(({ theme }) => ({
   color: theme.palette.primary.main,
   fontFamily: '"Quicksand", sans-serif',
   fontSize: '1.1rem',
@@ -45,10 +45,10 @@ const Header: React.FC = () => {
           Sweets You Knead
         </Logo>
         <Box sx={{ display: 'flex', gap: 2 }}>
-          <NavButton>Home</NavButton>
-          <NavButton>Menu</NavButton>
-          <NavButton>Our Story</NavButton>
-          <NavButton>Contact</NavButton>
+          <NavButton component="a" href="#home">Home</NavButton>
+          <NavButton component="a" href="#menu">Menu</NavButton>
+          <NavButton component="a" href="#our-story">Our Story</NavButton>
+          <NavButton component="a" href="#contact">Contact</NavButton>
         </Box>
       </Toolbar>
     </StyledAppBar>
