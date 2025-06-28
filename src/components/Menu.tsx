@@ -300,6 +300,29 @@ const Menu: React.FC = () => {
         .slick-prev:hover:before, .slick-next:hover:before {
           color: #5a2d0c;
         }
+        /* Mobile responsive arrows */
+        @media (max-width: 768px) {
+          .slick-prev {
+            left: -40px;
+          }
+          .slick-next {
+            right: -40px;
+          }
+          .slick-prev:before, .slick-next:before {
+            font-size: 1.5rem;
+          }
+        }
+        @media (max-width: 480px) {
+          .slick-prev {
+            left: -30px;
+          }
+          .slick-next {
+            right: -30px;
+          }
+          .slick-prev:before, .slick-next:before {
+            font-size: 1.2rem;
+          }
+        }
         /* Image zoom on hover */
         .MuiCardMedia-root {
           transition: transform 0.35s cubic-bezier(.4,2,.6,1);
@@ -315,9 +338,9 @@ const Menu: React.FC = () => {
         align="center"
         sx={{
           fontFamily: '"Caveat", cursive',
-          fontSize: '4rem',
+          fontSize: { xs: '2.5rem', sm: '3rem', md: '4rem' },
           color: '#5A3E22',
-          marginBottom: 6,
+          marginBottom: { xs: 4, md: 6 },
           textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
         }}
       >
@@ -328,11 +351,12 @@ const Menu: React.FC = () => {
         variant="body1"
         align="center"
         sx={{
-          fontSize: '1.2rem',
+          fontSize: { xs: '1rem', md: '1.2rem' },
           color: '#5A3E22',
-          marginBottom: 6,
+          marginBottom: { xs: 4, md: 6 },
           maxWidth: '800px',
           mx: 'auto',
+          px: 2,
         }}
       >
         Discover our handcrafted treats made with love and the finest ingredients. 
@@ -340,13 +364,17 @@ const Menu: React.FC = () => {
       </Typography>
 
       {Object.entries(menuCategories).map(([categoryKey, category]) => (
-        <Box key={categoryKey} sx={{ mb: 8 }}>
-          <CategoryTitle variant="h2" sx={{ color: '#5A3E22' }}>
+        <Box key={categoryKey} sx={{ mb: { xs: 6, md: 8 } }}>
+          <CategoryTitle variant="h2" sx={{ 
+            color: '#5A3E22',
+            fontSize: { xs: '2rem', sm: '2.2rem', md: '2.5rem' },
+            mb: { xs: 3, md: 4 }
+          }}>
             {category.title}
           </CategoryTitle>
           <Slider {...itemSliderSettings}>
             {category.items.map((item, index) => (
-              <Box key={index} sx={{ px: 2 }}>
+              <Box key={index} sx={{ px: { xs: 1, sm: 2 } }}>
                 <MenuItemCard>
                   <CardMedia
                     component="img"
@@ -360,7 +388,7 @@ const Menu: React.FC = () => {
                       component="h3"
                       sx={{
                         fontFamily: '"Caveat", cursive',
-                        fontSize: '1.6rem',
+                        fontSize: { xs: '1.3rem', sm: '1.4rem', md: '1.6rem' },
                         color: '#5A3E22',
                         marginBottom: 1,
                       }}
@@ -370,7 +398,11 @@ const Menu: React.FC = () => {
                     <Typography
                       variant="body2"
                       color="#5A3E22"
-                      sx={{ marginBottom: 2, minHeight: '60px' }}
+                      sx={{ 
+                        marginBottom: 2, 
+                        minHeight: { xs: '40px', md: '60px' },
+                        fontSize: { xs: '0.875rem', md: '1rem' }
+                      }}
                     >
                       {item.description}
                     </Typography>
@@ -383,7 +415,7 @@ const Menu: React.FC = () => {
                           sx={{
                             backgroundColor: 'secondary.main',
                             color: 'white',
-                            fontSize: '0.7rem',
+                            fontSize: { xs: '0.6rem', md: '0.7rem' },
                           }}
                         />
                       ))}
@@ -393,7 +425,7 @@ const Menu: React.FC = () => {
                       color="#5A3E22"
                       sx={{
                         fontFamily: '"Caveat", cursive',
-                        fontSize: '1.4rem',
+                        fontSize: { xs: '1.2rem', md: '1.4rem' },
                         fontWeight: 'bold',
                       }}
                     >
@@ -407,20 +439,28 @@ const Menu: React.FC = () => {
         </Box>
       ))}
 
-      <Box sx={{ textAlign: 'center', marginTop: 6 }}>
+      <Box sx={{ textAlign: 'center', marginTop: { xs: 4, md: 6 } }}>
         <Typography
           variant="h4"
           sx={{
             fontFamily: '"Caveat", cursive',
             color: '#5A3E22',
             marginBottom: 3,
+            fontSize: { xs: '1.8rem', md: '2.125rem' },
           }}
         >
           Custom Orders Welcome!
         </Typography>
         <Typography
           variant="body1"
-          sx={{ color: '#5A3E22', marginBottom: 4, maxWidth: '600px', mx: 'auto' }}
+          sx={{ 
+            color: '#5A3E22', 
+            marginBottom: 4, 
+            maxWidth: '600px', 
+            mx: 'auto',
+            px: 2,
+            fontSize: { xs: '1rem', md: '1.1rem' }
+          }}
         >
           Don't see exactly what you're looking for? We love creating custom orders! 
           Contact us to discuss your special requirements and we'll make your vision come to life.
@@ -433,8 +473,8 @@ const Menu: React.FC = () => {
           size="large"
           sx={{
             fontFamily: '"Caveat", cursive',
-            fontSize: '1.5rem',
-            padding: '12px 40px',
+            fontSize: { xs: '1.3rem', md: '1.5rem' },
+            padding: { xs: '10px 30px', md: '12px 40px' },
             borderRadius: '30px',
             backgroundColor: 'primary.main',
             textDecoration: 'none',
