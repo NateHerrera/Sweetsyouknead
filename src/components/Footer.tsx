@@ -3,8 +3,8 @@ import { Box, Container, Typography, Grid, Link } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const FooterContainer = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.primary.main,
-  color: theme.palette.primary.contrastText,
+  backgroundColor: '#E8AEB7',
+  color: '#5A3E22',
   padding: theme.spacing(6, 0),
   position: 'relative',
   '&::before': {
@@ -18,8 +18,8 @@ const FooterContainer = styled(Box)(({ theme }) => ({
       45deg,
       ${theme.palette.secondary.main},
       ${theme.palette.secondary.main} 10px,
-      ${theme.palette.primary.light} 10px,
-      ${theme.palette.primary.light} 20px
+      #D291BC 10px,
+      #D291BC 20px
     )`,
   }
 }));
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
                 marginBottom: 2,
               }}
             >
-              Sweets You Knead
+              Sweet Kneads Bakery
             </Typography>
             <Typography variant="body2" sx={{ marginBottom: 2 }}>
               Handcrafted with love, baked with passion. We create delicious treats
@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
             </Typography>
             <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
               <SocialIcon
-                href="https://facebook.com"
+                href="https://www.facebook.com/people/Sweets-You-Knead/100091789056293/?mibextid=wwXIfr&rdid=oz5IaBjuEKCbcqPC&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16yAzujpv8%2F%3Fmibextid%3DwwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -134,9 +134,8 @@ const Footer: React.FC = () => {
               Quick Links
             </Typography>
             <FooterLink href="/menu">Our Menu</FooterLink>
-            <FooterLink href="/about">About Us</FooterLink>
-            <FooterLink href="/contact">Contact</FooterLink>
-            <FooterLink href="/order">Order Online</FooterLink>
+            <FooterLink href="#about">About Us</FooterLink>
+            <FooterLink href="#contact">Contact</FooterLink>
           </Grid>
           <Grid item xs={12} md={4}>
             <Typography
@@ -181,7 +180,7 @@ const Footer: React.FC = () => {
           }}
         >
           <Typography variant="body2">
-            © {new Date().getFullYear()} Sweets You Knead. All rights reserved.
+            © {new Date().getFullYear()} Sweet Kneads Bakery. All rights reserved.
           </Typography>
         </Box>
       </Container>

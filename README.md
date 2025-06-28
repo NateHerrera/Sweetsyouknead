@@ -1,4 +1,4 @@
-# Sweets You Knead - Artisan Bakery Website
+# Sweet Kneads Bakery - Artisan Bakery Website
 
 A modern, artisan-style bakery website featuring a hand-drawn aesthetic, rustic branding, and whimsical personality. Built with React, TypeScript, and Material-UI.
 

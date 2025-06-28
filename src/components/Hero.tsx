@@ -7,8 +7,8 @@ const HeroContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  background: `linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-    url('/images/backgroundformainpage.png')`,
+  background: `linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    url('/images/newbackgroundindex.jpeg')`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   position: 'relative',
@@ -43,7 +43,7 @@ const Ribbon = styled(Box)(({ theme }) => ({
   width: '100%',
   height: '6px',
   margin: '0 0 20px 0',
-  background: 'repeating-linear-gradient(135deg, #8B4513, #8B4513 10px, #DEB887 10px, #DEB887 20px)',
+  background: 'repeating-linear-gradient(135deg, #E8AEB7, #E8AEB7 10px, #A8E063 10px, #A8E063 20px)',
   borderRadius: '2px',
   boxShadow: '0 1px 2px rgba(0,0,0,0.04)'
 }));
@@ -57,12 +57,18 @@ const Hero: React.FC = () => {
   return (
     <HeroContainer>
       <ContentContainer>
-        <Logo src="/images/Sweetsyoukneadlogotrans.png" alt="Sweets You Knead Logo" />
+        <Logo src="/images/Sweetsyoukneadlogotrans.png" alt="Sweet Kneads Bakery Logo" />
         <Ribbon />
-        <Typography variant="h1" className="hero-title">
+        <Typography
+          variant="h1"
+          sx={{ color: '#5A3E22', fontFamily: '"Caveat", cursive', mb: 2 }}
+        >
           Artisan Bakery
         </Typography>
-        <Typography variant="h2" className="hero-subtitle">
+        <Typography
+          variant="h2"
+          sx={{ color: '#5A3E22', fontFamily: '"Caveat", cursive', mb: 4 }}
+        >
           Handcrafted with love, baked with passion
         </Typography>
         <Button

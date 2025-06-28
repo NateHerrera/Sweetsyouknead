@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, Typography, TextField, Button, Grid, Paper } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Typography, TextField, Button, Grid, Paper, Alert } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 
@@ -80,6 +80,51 @@ const ContactInfo = styled(Box)(({ theme }) => ({
 }));
 
 const Contact: React.FC = () => {
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+
+    formData.append("access_key", "53e91303-8f18-4284-821f-289065a603a2"); 
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      }).then((res) => res.json());
+
+      if (res.success) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you! Your message has been sent successfully.'
+        });
+        // Reset form
+        (event.target as HTMLFormElement).reset();
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: 'Sorry, there was an error sending your message. Please try again.'
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Sorry, there was an error sending your message. Please try again.'
+      });
+    }
+  };
+
   return (
     <ContactContainer>
       <Box sx={{ position: 'relative', zIndex: 1 }}>
@@ -92,18 +137,38 @@ const Contact: React.FC = () => {
               viewport={{ once: true }}
             >
               <ContactForm>
-                <ContactTitle variant="h2">Get in Touch</ContactTitle>
-                <form>
+                <Typography
+                  variant="h2"
+                  sx={{ color: '#5A3E22', fontFamily: '"Caveat", cursive', mb: 2 }}
+                >
+                  Get in Touch
+                </Typography>
+                
+                {submitStatus.type && (
+                  <Alert 
+                    severity={submitStatus.type} 
+                    sx={{ mb: 2 }}
+                    onClose={() => setSubmitStatus({ type: null, message: '' })}
+                  >
+                    {submitStatus.message}
+                  </Alert>
+                )}
+
+                <form onSubmit={onSubmit}>
                   <StyledTextField
                     fullWidth
                     label="Name"
                     variant="outlined"
+                    name="name"
+                    required
                   />
                   <StyledTextField
                     fullWidth
                     label="Email"
                     variant="outlined"
                     type="email"
+                    name="email"
+                    required
                   />
                   <StyledTextField
                     fullWidth
@@ -111,6 +176,8 @@ const Contact: React.FC = () => {
                     variant="outlined"
                     multiline
                     rows={4}
+                    name="message"
+                    required
                   />
                   <Box sx={{ textAlign: 'center' }}>
                     <SubmitButton variant="contained" type="submit">
@@ -131,15 +198,15 @@ const Contact: React.FC = () => {
               <Box sx={{ mt: 4 }}>
                 <ContactInfo>
                   <img src="/images/location-arrow-svgrepo-com.svg" alt="Location" />
-                  <Typography>TBA</Typography>
+                  <Typography color="#5A3E22">TBA</Typography>
                 </ContactInfo>
                 <ContactInfo>
                   <img src="/images/email-part-2-svgrepo-com.svg" alt="Email" />
-                  <Typography>sweetsyouknead@gmail.com</Typography>
+                  <Typography color="#5A3E22">sweetsyouknead@gmail.com</Typography>
                 </ContactInfo>
                 <ContactInfo>
                   <img src="/images/clock-0900-svgrepo-com.svg" alt="Hours" />
-                  <Typography>Mon-Sat: 7am - 7pm</Typography>
+                  <Typography color="#5A3E22">Mon-Sat: 7am - 7pm</Typography>
                 </ContactInfo>
               </Box>
             </motion.div>

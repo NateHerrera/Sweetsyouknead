@@ -78,7 +78,12 @@ const OurStory: React.FC = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <StoryTitle variant="h2">Our Story</StoryTitle>
+            <Typography
+              variant="h2"
+              sx={{ color: '#5A3E22', fontFamily: '"Caveat", cursive', mb: 2 }}
+            >
+              My Story
+            </Typography>
             <StoryText>
             It all started in high school, selling brownies and cookies just to make a little extra cash. I never imagined it would turn into something bigger—until I read 
             Finding Your Element by Sir Ken Robinson. That book lit a spark. I realized I wanted to take my creativity and shape it into something real, something people could taste.
@@ -86,11 +91,11 @@ const OurStory: React.FC = () => {
         
             </StoryText>
             <StoryText>
-            I went on to earn a degree in Baking and Pastry Arts from St. Philip’s College, and now I’m building this business from scratch—literally. 
+            I went on to earn a degree in Baking and Pastry Arts from St. Philip's College, and now I'm building this business from scratch—literally. 
             From custom cakes to cookies, pies, and bread, every treat is made with care and a whole lot of heart.
             </StoryText>
             <StoryText>
-            This bakery wouldn’t exist without the love and support of my friends and family. They believed in me, and now I’m pouring that belief into every order. 
+            This bakery wouldn't exist without the love and support of my friends and family. They believed in me, and now I'm pouring that belief into every order. 
             This website is just the beginning.
 
 

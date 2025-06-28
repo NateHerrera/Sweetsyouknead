@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Box, Container } from '@mui/material';
+import { Box } from '@mui/material';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import MenuPreview from './components/MenuPreview';
-import OurStory from './components/OurStory';
-import Contact from './components/Contact';
+import Home from './components/Home';
+import Menu from './components/Menu';
 import Footer from './components/Footer';
 import FloatingCupcake from './components/FloatingCupcake';
 import './smooth-scroll.css';
@@ -14,14 +13,17 @@ import './smooth-scroll.css';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#8B4513', // Warm brown
+      main: '#A0521D', // More saturated, vibrant brown
     },
     secondary: {
-      main: '#DEB887', // Burlywood
+      main: '#E1A95F', // More saturated, vibrant gold
     },
     background: {
-      default: '#FFF8DC', // Cornsilk
-      paper: '#FAEBD7', // Antique white
+      paper: '#FFE0B2', // More saturated, warm paper
+    },
+    text: {
+      primary: '#5A3E22', // Darker teddy bear brown
+      secondary: '#5A3E22', // Darker teddy bear brown
     },
   },
   typography: {
@@ -29,18 +31,22 @@ const theme = createTheme({
     h1: {
       fontFamily: '"Caveat", cursive',
       fontSize: '3.5rem',
+      color: '#5A3E22',
     },
     h2: {
       fontFamily: '"Caveat", cursive',
       fontSize: '2.8rem',
+      color: '#5A3E22',
     },
     h3: {
       fontFamily: '"Caveat", cursive',
       fontSize: '2.2rem',
+      color: '#5A3E22',
     },
     body1: {
       fontFamily: '"Quicksand", sans-serif',
       fontSize: '1.1rem',
+      color: '#5A3E22',
     },
   },
 });
@@ -77,20 +83,26 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Box sx={{ position: 'relative', minHeight: '100vh' }}>
-        <Header />
-        <Container maxWidth="lg">
-          <div id="home"><Hero /></div>
-          <div id="menu"><MenuPreview /></div>
-          <div id="our-story"><OurStory /></div>
-          <div id="contact"><Contact /></div>
-        </Container>
-        <Footer />
-        <FloatingCupcake />
-      </Box>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Box
+          sx={{
+            position: 'relative',
+            minHeight: '100vh',
+            background: 'linear-gradient(135deg, #FFB6C1 0%, #A8E063 100%)',
+          }}
+        >
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<Menu />} />
+          </Routes>
+          <Footer />
+          <FloatingCupcake />
+        </Box>
+      </ThemeProvider>
+    </Router>
   );
 }
 

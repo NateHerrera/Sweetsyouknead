@@ -45,7 +45,7 @@ const Logo: React.FC<LogoProps> = ({ variant = 'default' }) => {
   return (
     <LogoContainer>
       <Typography variant="h1" className="logo-text">
-        Sweets You Knead
+        Sweet Kneads Bakery
       </Typography>
       {variant === 'default' && (
         <>

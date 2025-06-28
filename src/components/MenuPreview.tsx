@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 
 const MenuContainer = styled(Container)(({ theme }) => ({
   padding: theme.spacing(8, 0),
@@ -35,26 +36,26 @@ const menuItems = [
   {
     title: 'Custom Cakes',
     description: 'Handcrafted cakes with unique flavors and decorations',
-    image: 'https://placehold.co/400x300/FFF5E6/8B4513?text=🍰',
-    price: 'From $45 and up'
+    image: 'images/IMG_2766.webp',
+    price: 'From $35 and up'
   },
   {
     title: 'Custom Cupcakes',
     description: 'Handcrafted cupcakes with unique flavors and decorations',
-    image: 'https://placehold.co/400x300/FFF5E6/8B4513?text=🍞',
+    image: 'images/IMG_2861.webp',
     price: 'From $25 and up'
   },
   {
     title: 'Bread Products',
     description: 'Artisan breads and pastries',
-    image: 'https://placehold.co/400x300/FFF5E6/8B4513?text=🥧',
-    price: 'From $15 and up'
+    image: 'images/IMG_1436.webp',
+    price: 'From $20 and up'
   },
   {
     title: 'Seasonal Items',
     description: 'Cookies, pies, and more',
-    image: 'https://placehold.co/400x300/FFF5E6/8B4513?text=🎂',
-    price: 'From $15 and up'
+    image: 'images/IMG_1907.webp',
+    price: 'From $20 and up'
   }
 ];
 
@@ -68,7 +69,7 @@ const MenuPreview: React.FC = () => {
         sx={{
           fontFamily: '"Caveat", cursive',
           fontSize: '3rem',
-          color: 'primary.main',
+          color: '#5A3E22',
           marginBottom: 4,
           textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
         }}
@@ -91,7 +92,7 @@ const MenuPreview: React.FC = () => {
                   sx={{
                     fontFamily: '"Caveat", cursive',
                     fontSize: '1.8rem',
-                    color: 'primary.main',
+                    color: '#5A3E22',
                     marginBottom: 1,
                   }}
                 >
@@ -106,10 +107,10 @@ const MenuPreview: React.FC = () => {
                 </Typography>
                 <Typography
                   variant="h6"
-                  color="secondary.main"
                   sx={{
                     fontFamily: '"Caveat", cursive',
                     fontSize: '1.4rem',
+                    color: '#5A3E22',
                   }}
                 >
                   {item.price}
@@ -121,6 +122,8 @@ const MenuPreview: React.FC = () => {
       </Grid>
       <Box sx={{ textAlign: 'center', marginTop: 4 }}>
         <Button
+          component={Link}
+          to="/menu"
           variant="outlined"
           color="primary"
           size="large"
@@ -130,9 +133,11 @@ const MenuPreview: React.FC = () => {
             padding: '10px 30px',
             borderRadius: '30px',
             borderWidth: '2px',
+            textDecoration: 'none',
             '&:hover': {
               borderWidth: '2px',
             },
+            color: '#5A3E22',
           }}
         >
           View Full Menu

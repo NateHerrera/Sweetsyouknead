@@ -1,6 +1,6 @@
 {
-  "short_name": "Sweets You Knead",
-  "name": "Sweets You Knead - Artisan Bakery",
+  "short_name": "Sweet Kneads Bakery",
+  "name": "Sweet Kneads Bakery - Artisan Bakery",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#8B4513",
-  "background_color": "#FFF8DC"
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 } 
