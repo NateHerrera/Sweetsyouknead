@@ -44,8 +44,17 @@ interface LogoProps {
 const Logo: React.FC<LogoProps> = ({ variant = 'default' }) => {
   return (
     <LogoContainer>
-      <Typography variant="h1" className="logo-text">
-        Sweet Kneads Bakery
+      <Typography
+        variant={variant === 'default' ? 'h1' : 'h6'}
+        sx={{
+          fontFamily: '"Caveat", cursive',
+          fontSize: variant === 'default' ? '2.5rem' : '1.5rem',
+          fontWeight: 700,
+          color: '#5A3E22',
+          textAlign: 'center',
+        }}
+      >
+        Simply Precious Bakery
       </Typography>
       {variant === 'default' && (
         <>

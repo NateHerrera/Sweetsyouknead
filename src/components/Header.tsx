@@ -147,7 +147,7 @@ const Header: React.FC = () => {
       <StyledAppBar position="sticky">
         <Toolbar>
           <Logo variant="h1">
-            Sweet Kneads Bakery
+            Simply Precious Bakery
           </Logo>
           
           {isMobile ? (

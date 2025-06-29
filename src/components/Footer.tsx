@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
                 marginBottom: 2,
               }}
             >
-              Sweet Kneads Bakery
+              Simply Precious Bakery
             </Typography>
             <Typography variant="body2" sx={{ marginBottom: 2 }}>
               Handcrafted with love, baked with passion. We create delicious treats
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
                 />
               </SocialIcon>
               <SocialIcon
-                href="https://instagram.com"
+                href="https://www.instagram.com/simplypreciousbakery/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -180,7 +180,7 @@ const Footer: React.FC = () => {
           }}
         >
           <Typography variant="body2">
-            © {new Date().getFullYear()} Sweet Kneads Bakery. All rights reserved.
+            © {new Date().getFullYear()} Simply Precious Bakery. All rights reserved.
           </Typography>
         </Box>
       </Container>

@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
   return (
     <HeroContainer>
       <ContentContainer>
-        <Logo src="/images/Sweetsyoukneadlogotrans.png" alt="Sweet Kneads Bakery Logo" />
+        <Logo src="/images/Sweetsyoukneadlogotrans.png" alt="Simply Precious Bakery Logo" />
         <Ribbon />
         <Typography
           variant="h1"
