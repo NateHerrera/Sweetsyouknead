@@ -49,7 +49,7 @@ const Ribbon = styled(Box)(({ theme }) => ({
 }));
 
 const Logo = styled('img')(({ theme }) => ({
-  width: '300px',
+  width: '500px',
   height: 'auto',
 }));
 
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
   return (
     <HeroContainer>
       <ContentContainer>
-        <Logo src="/images/Sweetsyoukneadlogotrans.png" alt="Simply Precious Bakery Logo" />
+        <Logo src="/images/simplyprecioushomepagelogo.png" alt="Simply Precious Bakery Logo" />
         <Ribbon />
         <Typography
           variant="h1"
