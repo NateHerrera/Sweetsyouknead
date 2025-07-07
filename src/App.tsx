@@ -13,17 +13,17 @@ import './smooth-scroll.css';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#A0521D', // More saturated, vibrant brown
+      main: '#b57edc', // Lavender for text and buttons
     },
     secondary: {
-      main: '#E1A95F', // More saturated, vibrant gold
+      main: '#E1A95F', // Keep gold for accents
     },
     background: {
-      paper: '#FFE0B2', // More saturated, warm paper
+      paper: '#FFE0B2',
     },
     text: {
-      primary: '#5A3E22', // Darker teddy bear brown
-      secondary: '#5A3E22', // Darker teddy bear brown
+      primary: '#b57edc', // Lavender for all text
+      secondary: '#b57edc',
     },
   },
   typography: {
@@ -31,22 +31,22 @@ const theme = createTheme({
     h1: {
       fontFamily: '"Caveat", cursive',
       fontSize: '3.5rem',
-      color: '#5A3E22',
+      color: '#b57edc',
     },
     h2: {
       fontFamily: '"Caveat", cursive',
       fontSize: '2.8rem',
-      color: '#5A3E22',
+      color: '#b57edc',
     },
     h3: {
       fontFamily: '"Caveat", cursive',
       fontSize: '2.2rem',
-      color: '#5A3E22',
+      color: '#b57edc',
     },
     body1: {
       fontFamily: '"Quicksand", sans-serif',
       fontSize: '1.1rem',
-      color: '#5A3E22',
+      color: '#b57edc',
     },
   },
 });

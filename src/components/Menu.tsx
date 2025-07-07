@@ -270,7 +270,7 @@ const Menu: React.FC = () => {
           width: 48px;
           height: 48px;
           background: transparent;
-          color: #8B4513 !important;
+          color: #ec6fa7 !important;
           transition: color 0.2s;
           border: none;
           position: absolute;
@@ -285,7 +285,7 @@ const Menu: React.FC = () => {
         }
         .slick-prev:before, .slick-next:before {
           font-size: 2rem;
-          color: #8B4513;
+          color: #ec6fa7;
           opacity: 1;
           display: flex;
           align-items: center;
@@ -297,10 +297,10 @@ const Menu: React.FC = () => {
           padding: 0;
         }
         .slick-prev:hover, .slick-next:hover {
-          color: #5a2d0c !important;
+          color: #c94e87 !important;
         }
-        .slick-prev:hover:before, .slick-next:hover:before {
-          color: #5a2d0c;
+        .slick-prev:hover:before, .slick-next:before {
+          color: #c94e87;
         }
         /* Mobile responsive arrows */
         @media (max-width: 768px) {
@@ -341,7 +341,7 @@ const Menu: React.FC = () => {
         sx={{
           fontFamily: '"Caveat", cursive',
           fontSize: { xs: '2.5rem', sm: '3rem', md: '4rem' },
-          color: '#5A3E22',
+          color: '#000',
           marginBottom: { xs: 4, md: 6 },
           textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
         }}
@@ -354,7 +354,7 @@ const Menu: React.FC = () => {
         align="center"
         sx={{
           fontSize: { xs: '1rem', md: '1.2rem' },
-          color: '#5A3E22',
+          color: '#000',
           marginBottom: { xs: 4, md: 6 },
           maxWidth: '800px',
           mx: 'auto',
@@ -373,7 +373,7 @@ const Menu: React.FC = () => {
       {Object.entries(menuCategories).map(([categoryKey, category]) => (
         <Box key={categoryKey} sx={{ mb: { xs: 6, md: 8 }, position: 'relative', maxWidth: { xs: '100vw', md: 'none' }, width: { xs: '100vw', md: 'auto' }, overflowX: { xs: 'hidden', md: 'visible' } }}>
           <CategoryTitle variant="h2" sx={{ 
-            color: '#5A3E22',
+            color: '#000',
             fontSize: { xs: '1.3rem', sm: '2rem', md: '2.5rem' },
             mb: { xs: 2, md: 4 },
             mt: { xs: 2, md: 6 },
@@ -450,7 +450,7 @@ const Menu: React.FC = () => {
                       sx={{
                         fontFamily: '"Caveat", cursive',
                         fontSize: { xs: '1.1rem', sm: '1.4rem', md: '1.6rem' },
-                        color: '#5A3E22',
+                        color: '#000',
                         marginBottom: 1,
                       }}
                     >
@@ -458,7 +458,7 @@ const Menu: React.FC = () => {
                     </Typography>
                     <Typography
                       variant="body2"
-                      color="#5A3E22"
+                      color="#000"
                       sx={{ 
                         marginBottom: 2, 
                         minHeight: { xs: '32px', md: '60px' },
@@ -474,7 +474,7 @@ const Menu: React.FC = () => {
                           label={tag}
                           size="small"
                           sx={{
-                            backgroundColor: 'secondary.main',
+                            backgroundColor: '#ec6fa7',
                             color: 'white',
                             fontSize: { xs: '0.6rem', md: '0.7rem' },
                           }}
@@ -483,7 +483,7 @@ const Menu: React.FC = () => {
                     </Box>
                     <Typography
                       variant="h6"
-                      color="#5A3E22"
+                      color="#000"
                       sx={{
                         fontFamily: '"Caveat", cursive',
                         fontSize: { xs: '1rem', md: '1.4rem' },
@@ -537,11 +537,10 @@ const Menu: React.FC = () => {
             fontSize: { xs: '1.3rem', md: '1.5rem' },
             padding: { xs: '10px 30px', md: '12px 40px' },
             borderRadius: '30px',
-            backgroundColor: 'primary.main',
-            textDecoration: 'none',
-            color: '#5A3E22',
+            backgroundColor: '#b57edc',
+            color: '#fff',
             '&:hover': {
-              backgroundColor: 'primary.dark',
+              backgroundColor: '#a06fc4',
             },
           }}
         >

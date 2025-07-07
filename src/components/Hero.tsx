@@ -59,9 +59,11 @@ const Logo = styled('img')(({ theme }) => ({
   },
   [theme.breakpoints.up('md')]: {
     maxWidth: 400,
+    marginLeft: 0,
   },
   [theme.breakpoints.up('lg')]: {
     maxWidth: 500,
+    marginLeft: 0,
   },
 }));
 
@@ -78,13 +80,13 @@ const Hero: React.FC = () => {
         <Ribbon />
         <Typography
           variant="h1"
-          sx={{ color: '#5A3E22', fontFamily: '"Caveat", cursive', mb: 2 }}
+          sx={{ color: '#000', fontFamily: '"Caveat", cursive', mb: 2 }}
         >
           Artisan Bakery
         </Typography>
         <Typography
           variant="h2"
-          sx={{ color: '#5A3E22', fontFamily: '"Caveat", cursive', mb: 4 }}
+          sx={{ color: '#000', fontFamily: '"Caveat", cursive', mb: 4 }}
         >
           Handcrafted with love, baked with passion
         </Typography>
@@ -98,7 +100,11 @@ const Hero: React.FC = () => {
             padding: '12px 32px',
             borderRadius: '30px',
             boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+            backgroundColor: '#b57edc',
+            color: '#fff',
             '&:hover': {
+              backgroundColor: '#a06fc4',
+              color: '#fff',
               transform: 'translateY(-2px)',
               boxShadow: '0 6px 12px rgba(0,0,0,0.15)',
             },

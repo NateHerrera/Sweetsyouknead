@@ -70,8 +70,8 @@ const Footer: React.FC = () => {
   return (
     <FooterContainer>
       <Container>
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={4}>
+        <Grid container spacing={4} justifyContent="space-between" alignItems="flex-start">
+          <Grid item xs={12} md={5} sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-start' } }}>
             <Typography
               variant="h6"
               sx={{
@@ -122,22 +122,7 @@ const Footer: React.FC = () => {
               </SocialIcon>
             </Box>
           </Grid>
-          <Grid item xs={12} md={4}>
-            <Typography
-              variant="h6"
-              sx={{
-                fontFamily: '"Caveat", cursive',
-                fontSize: '1.8rem',
-                marginBottom: 2,
-              }}
-            >
-              Quick Links
-            </Typography>
-            <FooterLink href="/menu">Our Menu</FooterLink>
-            <FooterLink href="#about">About Us</FooterLink>
-            <FooterLink href="#contact">Contact</FooterLink>
-          </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={5} sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-end' } }}>
             <Typography
               variant="h6"
               sx={{

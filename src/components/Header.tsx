@@ -13,7 +13,7 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 const Logo = styled(Typography)(({ theme }) => ({
   fontFamily: '"Caveat", cursive',
   fontSize: '2.5rem',
-  color: '#5A3E22',
+  color: '#b57edc',
   textAlign: 'center',
   flexGrow: 1,
   [theme.breakpoints.down('sm')]: {
@@ -41,7 +41,7 @@ const Logo = styled(Typography)(({ theme }) => ({
 }));
 
 const NavButton = styled(Button)(({ theme }) => ({
-  color: '#5A3E22',
+  color: '#b57edc',
   fontFamily: '"Quicksand", sans-serif',
   fontSize: '1.1rem',
   margin: '0 10px',
@@ -51,12 +51,12 @@ const NavButton = styled(Button)(({ theme }) => ({
     margin: '0 5px',
   },
   '&:hover': {
-    backgroundColor: 'rgba(139, 69, 19, 0.1)',
+    backgroundColor: '#d1a6e7',
   },
 }));
 
 const NavAnchor = styled('a')(({ theme }) => ({
-  color: '#5A3E22',
+  color: '#b57edc',
   fontFamily: '"Quicksand", sans-serif',
   fontSize: '1.1rem',
   margin: '0 10px',
@@ -72,13 +72,13 @@ const NavAnchor = styled('a')(({ theme }) => ({
     padding: '4px 12px',
   },
   '&:hover': {
-    backgroundColor: 'rgba(139, 69, 19, 0.1)',
+    backgroundColor: '#d1a6e7',
     textDecoration: 'none',
   },
 }));
 
 const NavLink = styled(Link)(({ theme }) => ({
-  color: '#5A3E22',
+  color: '#b57edc',
   fontFamily: '"Quicksand", sans-serif',
   fontSize: '1.1rem',
   margin: '0 10px',
@@ -92,7 +92,7 @@ const NavLink = styled(Link)(({ theme }) => ({
     padding: '4px 12px',
   },
   '&:hover': {
-    backgroundColor: 'rgba(139, 69, 19, 0.1)',
+    backgroundColor: '#d1a6e7',
     textDecoration: 'none',
   },
 }));
@@ -165,7 +165,7 @@ const Header: React.FC = () => {
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ color: '#5A3E22' }}
+              sx={{ color: '#b57edc' }}
             >
               ☰
             </IconButton>

@@ -74,7 +74,7 @@ const MenuPreview: React.FC = () => {
         sx={{
           fontFamily: '"Caveat", cursive',
           fontSize: '3rem',
-          color: '#5A3E22',
+          color: '#000',
           marginBottom: 4,
           textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
         }}
@@ -97,7 +97,7 @@ const MenuPreview: React.FC = () => {
                   sx={{
                     fontFamily: '"Caveat", cursive',
                     fontSize: '1.8rem',
-                    color: '#5A3E22',
+                    color: '#000',
                     marginBottom: 1,
                   }}
                 >
@@ -105,7 +105,7 @@ const MenuPreview: React.FC = () => {
                 </Typography>
                 <Typography
                   variant="body1"
-                  color="text.secondary"
+                  color="#000"
                   sx={{ marginBottom: 2 }}
                 >
                   {item.description}
@@ -115,7 +115,7 @@ const MenuPreview: React.FC = () => {
                   sx={{
                     fontFamily: '"Caveat", cursive',
                     fontSize: '1.4rem',
-                    color: '#5A3E22',
+                    color: '#000',
                   }}
                 >
                   {item.price}
@@ -137,10 +137,15 @@ const MenuPreview: React.FC = () => {
             borderRadius: '30px',
             borderWidth: '2px',
             textDecoration: 'none',
+            backgroundColor: '#b57edc',
+            color: '#fff',
+            borderColor: '#b57edc',
             '&:hover': {
+              backgroundColor: '#a06fc4',
+              color: '#fff',
+              borderColor: '#a06fc4',
               borderWidth: '2px',
             },
-            color: '#5A3E22',
           }}
           onClick={handleViewFullMenu}
         >
