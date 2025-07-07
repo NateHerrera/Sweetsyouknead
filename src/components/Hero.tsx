@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Container, Typography, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
 
 const HeroContainer = styled(Box)(({ theme }) => ({
   minHeight: '100vh',
@@ -49,11 +50,27 @@ const Ribbon = styled(Box)(({ theme }) => ({
 }));
 
 const Logo = styled('img')(({ theme }) => ({
-  width: '500px',
+  width: '70vw',
+  marginLeft: '6vw',
   height: 'auto',
+  [theme.breakpoints.up('sm')]: {
+    width: '50vw',
+    marginLeft: '10vw',
+  },
+  [theme.breakpoints.up('md')]: {
+    maxWidth: 400,
+  },
+  [theme.breakpoints.up('lg')]: {
+    maxWidth: 500,
+  },
 }));
 
 const Hero: React.FC = () => {
+  const navigate = useNavigate();
+  const handleViewMenu = () => {
+    navigate('/menu');
+    window.scrollTo(0, 0);
+  };
   return (
     <HeroContainer>
       <ContentContainer>
@@ -87,6 +104,7 @@ const Hero: React.FC = () => {
             },
             transition: 'all 0.3s ease',
           }}
+          onClick={handleViewMenu}
         >
           View Our Menu
         </Button>

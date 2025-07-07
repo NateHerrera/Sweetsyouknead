@@ -10,6 +10,14 @@ import { Link } from 'react-router-dom';
 const MenuContainer = styled(Container)(({ theme }) => ({
   padding: theme.spacing(8, 0),
   position: 'relative',
+  [theme.breakpoints.down('sm')]: {
+    width: '100vw',
+    maxWidth: '100vw',
+    marginLeft: 0,
+    marginRight: 0,
+    paddingLeft: 0,
+    paddingRight: 0,
+  },
 }));
 
 const MenuItemCard = styled(Card)(({ theme }) => ({
@@ -217,24 +225,18 @@ const itemSliderSettings = {
   dots: false,
   infinite: false,
   speed: 500,
-  slidesToShow: 4,
+  slidesToShow: 3,
   slidesToScroll: 1,
   arrows: true,
   responsive: [
     {
       breakpoint: 1200,
       settings: {
-        slidesToShow: 3,
-      },
-    },
-    {
-      breakpoint: 900,
-      settings: {
         slidesToShow: 2,
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 900,
       settings: {
         slidesToShow: 1,
       },
@@ -369,23 +371,77 @@ const Menu: React.FC = () => {
       </Typography>
 
       {Object.entries(menuCategories).map(([categoryKey, category]) => (
-        <Box key={categoryKey} sx={{ mb: { xs: 6, md: 8 } }}>
+        <Box key={categoryKey} sx={{ mb: { xs: 6, md: 8 }, position: 'relative', maxWidth: { xs: '100vw', md: 'none' }, width: { xs: '100vw', md: 'auto' }, overflowX: { xs: 'hidden', md: 'visible' } }}>
           <CategoryTitle variant="h2" sx={{ 
             color: '#5A3E22',
-            fontSize: { xs: '2rem', sm: '2.2rem', md: '2.5rem' },
-            mb: { xs: 3, md: 4 }
+            fontSize: { xs: '1.3rem', sm: '2rem', md: '2.5rem' },
+            mb: { xs: 2, md: 4 },
+            mt: { xs: 2, md: 6 },
           }}>
             {category.title}
           </CategoryTitle>
+          {/* Swipe indicator for mobile */}
+          <Box sx={{
+            display: { xs: 'flex', md: 'none' },
+            alignItems: 'center',
+            justifyContent: 'center',
+            mb: 1,
+            position: 'relative',
+            width: '100%',
+            zIndex: 2,
+          }}>
+            <Box sx={{
+              position: 'absolute',
+              left: 0,
+              top: 0,
+              bottom: 0,
+              width: 32,
+              background: 'linear-gradient(to right, #fff 60%, transparent)',
+              pointerEvents: 'none',
+            }} />
+            <Typography sx={{
+              fontSize: '0.95rem',
+              color: '#8B4513',
+              fontFamily: 'Quicksand, sans-serif',
+              px: 2,
+              opacity: 0.8,
+            }}>
+              Swipe to see more!
+            </Typography>
+            <Box sx={{
+              position: 'absolute',
+              right: 0,
+              top: 0,
+              bottom: 0,
+              width: 32,
+              background: 'linear-gradient(to left, #fff 60%, transparent)',
+              pointerEvents: 'none',
+            }} />
+          </Box>
           <Slider {...itemSliderSettings}>
             {category.items.map((item, index) => (
-              <Box key={index} sx={{ px: { xs: 1, sm: 2 } }}>
-                <MenuItemCard>
+              <Box key={index} sx={{ px: { xs: 0.5, sm: 2, md: 4, lg: 6 }, maxWidth: { xs: '100vw', md: 'none' }, width: { xs: '100vw', md: 'auto' }, overflowX: { xs: 'hidden', md: 'visible' } }}>
+                <MenuItemCard sx={{
+                  minWidth: { xs: 220, sm: 260, md: 320 },
+                  maxWidth: { xs: 240, sm: 300, md: 340 },
+                  boxSizing: 'border-box',
+                  mx: 'auto',
+                  mb: { xs: 2, md: 0 },
+                  '& .MuiCardMedia-root': {
+                    height: { xs: 140, sm: 180, md: 250 },
+                    width: '100%',
+                    maxWidth: '100%',
+                  },
+                  '& .MuiCardContent-root': {
+                    padding: { xs: 2, sm: 3 },
+                  },
+                }}>
                   <CardMedia
                     component="img"
                     image={item.image}
                     alt={item.name}
                     onClick={() => handleImgClick(item.image, item.name)}
+                    sx={{ width: '100%', maxWidth: '100%' }}
                   />
                   <CardContent>
                     <Typography
@@ -393,7 +449,7 @@ const Menu: React.FC = () => {
                       component="h3"
                       sx={{
                         fontFamily: '"Caveat", cursive',
-                        fontSize: { xs: '1.3rem', sm: '1.4rem', md: '1.6rem' },
+                        fontSize: { xs: '1.1rem', sm: '1.4rem', md: '1.6rem' },
                         color: '#5A3E22',
                         marginBottom: 1,
                       }}
@@ -405,8 +461,8 @@ const Menu: React.FC = () => {
                       color="#5A3E22"
                       sx={{ 
                         marginBottom: 2, 
-                        minHeight: { xs: '40px', md: '60px' },
-                        fontSize: { xs: '0.875rem', md: '1rem' }
+                        minHeight: { xs: '32px', md: '60px' },
+                        fontSize: { xs: '0.8rem', md: '1rem' }
                       }}
                     >
                       {item.description}
@@ -430,7 +486,7 @@ const Menu: React.FC = () => {
                       color="#5A3E22"
                       sx={{
                         fontFamily: '"Caveat", cursive',
-                        fontSize: { xs: '1.2rem', md: '1.4rem' },
+                        fontSize: { xs: '1rem', md: '1.4rem' },
                         fontWeight: 'bold',
                       }}
                     >

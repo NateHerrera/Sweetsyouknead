@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const MenuContainer = styled(Container)(({ theme }) => ({
   padding: theme.spacing(8, 0),
@@ -60,6 +60,11 @@ const menuItems = [
 ];
 
 const MenuPreview: React.FC = () => {
+  const navigate = useNavigate();
+  const handleViewFullMenu = () => {
+    navigate('/menu');
+    window.scrollTo(0, 0);
+  };
   return (
     <MenuContainer>
       <Typography
@@ -122,8 +127,6 @@ const MenuPreview: React.FC = () => {
       </Grid>
       <Box sx={{ textAlign: 'center', marginTop: 4 }}>
         <Button
-          component={Link}
-          to="/menu"
           variant="outlined"
           color="primary"
           size="large"
@@ -139,6 +142,7 @@ const MenuPreview: React.FC = () => {
             },
             color: '#5A3E22',
           }}
+          onClick={handleViewFullMenu}
         >
           View Full Menu
         </Button>

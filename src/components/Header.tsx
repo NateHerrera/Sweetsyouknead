@@ -144,8 +144,17 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <StyledAppBar position="sticky">
-        <Toolbar>
+      <StyledAppBar position="fixed">
+        <Toolbar
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: { xs: 'center', md: 'flex-start' },
+            position: 'relative',
+            minHeight: { xs: 56, sm: 64 },
+            px: { xs: 0, sm: 2 },
+          }}
+        >
           <Logo variant="h1">
             Simply Precious Bakery
           </Logo>
@@ -199,6 +208,8 @@ const Header: React.FC = () => {
           )}
         </Toolbar>
       </StyledAppBar>
+      {/* Spacer to prevent content from being hidden behind the fixed navbar */}
+      <Box sx={{ height: { xs: 56, sm: 64 } }} />
       
       <Drawer
         variant="temporary"
