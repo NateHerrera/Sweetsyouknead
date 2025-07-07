@@ -18,9 +18,13 @@ const Logo = styled(Typography)(({ theme }) => ({
   flexGrow: 1,
   [theme.breakpoints.down('sm')]: {
     fontSize: '2rem',
+    flexGrow: 1,
+    textAlign: 'center',
   },
   [theme.breakpoints.down('xs')]: {
     fontSize: '1.8rem',
+    flexGrow: 1,
+    textAlign: 'center',
   },
   '&::before, &::after': {
     content: '""',
@@ -145,22 +149,37 @@ const Header: React.FC = () => {
   return (
     <>
       <StyledAppBar position="sticky">
-        <Toolbar>
-          <Logo variant="h1">
-            Simply Precious Bakery
-          </Logo>
-          
-          {isMobile ? (
+        <Toolbar sx={{ 
+          display: 'flex', 
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          [theme.breakpoints.down('md')]: {
+            justifyContent: 'center',
+            position: 'relative',
+          }
+        }}>
+          {isMobile && (
             <IconButton
               color="inherit"
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ color: '#5A3E22' }}
+              sx={{ 
+                color: '#5A3E22',
+                position: 'absolute',
+                left: 0,
+                zIndex: 1,
+              }}
             >
               ☰
             </IconButton>
-          ) : (
+          )}
+          
+          <Logo variant="h1">
+            Simply Precious Bakery
+          </Logo>
+          
+          {!isMobile && (
             <Box sx={{ display: 'flex', gap: 2 }}>
               {location.pathname === '/' ? (
                 <NavAnchor href="#home">
