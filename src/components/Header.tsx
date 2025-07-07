@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button, Box, IconButton, Drawer, List, ListItem, ListItemText, useTheme, useMediaQuery } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Link, useLocation } from 'react-router-dom';
-import MenuIcon from '@mui/icons-material/Menu';
+// import MenuIcon from '@mui/icons-material/Menu';
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: 'rgba(255, 248, 220, 0.95)',
@@ -158,7 +158,7 @@ const Header: React.FC = () => {
               onClick={handleDrawerToggle}
               sx={{ color: '#5A3E22' }}
             >
-              <MenuIcon />
+              ☰
             </IconButton>
           ) : (
             <Box sx={{ display: 'flex', gap: 2 }}>

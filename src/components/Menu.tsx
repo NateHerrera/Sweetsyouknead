@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Link } from 'react-router-dom';
-import CloseIcon from '@mui/icons-material/Close';
+// import CloseIcon from '@mui/icons-material/Close';
 
 const MenuContainer = styled(Container)(({ theme }) => ({
   padding: theme.spacing(8, 0),
@@ -511,7 +511,7 @@ const Menu: React.FC = () => {
           onClick={handleClose}
           sx={{ position: 'absolute', right: 8, top: 8, color: '#8B4513', zIndex: 1 }}
         >
-          <CloseIcon fontSize="large" />
+          ✕
         </IconButton>
         {modalImg && (
           <Box sx={{ maxWidth: '80vw', maxHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', p: 2 }}>
