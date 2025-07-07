@@ -51,11 +51,11 @@ const Ribbon = styled(Box)(({ theme }) => ({
 
 const Logo = styled('img')(({ theme }) => ({
   width: '70vw',
-  marginLeft: '6vw',
+  marginLeft: '12vw',
   height: 'auto',
   [theme.breakpoints.up('sm')]: {
     width: '50vw',
-    marginLeft: '10vw',
+    marginLeft: '16vw',
   },
   [theme.breakpoints.up('md')]: {
     maxWidth: 400,
