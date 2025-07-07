@@ -106,7 +106,7 @@ const menuCategories = {
         name: 'Double Chocolate Cake',
         description: 'Chocolate cake with chocolate buttercream, chocolate shavings, raspberry filling, and raspberry fruit',
         image: 'images/IMG_2865.webp',
-        price: '$85',
+        price: '$45-55',
         tags: ['Chocolate', 'Raspberry',]
       },
       
@@ -156,26 +156,26 @@ const menuCategories = {
         tags: ['Bread', 'Sausage',]
       },
       {
-        name: 'Zucchini Bread',
-        description: 'Moist zucchini full loaf or 8 mini loaves, icing is optional as a topping ',
-        image: 'images/backgroundformainpage.png',
-        price: '$20 full or mini',
-        tags: ['Cinnamon', 'Zucchini', 'Bread']
+        name: 'Guava Cheesecake Buns',
+        description: 'Crumble topping and icing glaze, sweet and tart, and flavors can vary from strawberry, blueberry, and raspberry',
+        image: 'images/IMG_2952.webp',
+        price: '$25-35 per dozen',
+        tags: ['Cheesecake', 'Guava', 'Sweet/Tart']
       },
       {
-        name: 'Banana Bread',
-        description: 'Sweet and soft banana bread loaf or 8 mini loaves',
-        image: 'images/backgroundformainpage.png',
-        price: '$20 full or mini',
-        tags: ['Bread', 'Banana', 'Sweet']
+        name: 'Guava Muffins',
+        description: 'Muffins with crumble topping and icing glaze, sweet and tart, and flavors can vary from strawberry, blueberry, and raspberry',
+        image: 'images/IMG_2954.webp',
+        price: '$25-35 per dozen',
+        tags: ['Muffins', 'Guava', 'Sweet/Tart']
       },
-      {
+      /*{
         name: 'Cinnamon Rolls',
         description: 'Soft, fluffy cinnamon rolls topped with icing ',
         image: 'images/backgroundformainpage.png',
         price: '$30/dozen',
         tags: ['Dough', 'Rolls', 'Soft']
-      }
+      }*/
     ]
   },
   seasonalItems: {
@@ -361,6 +361,11 @@ const Menu: React.FC = () => {
       >
         Discover our handcrafted treats made with love and the finest ingredients. 
         Each item is baked fresh daily to bring you the perfect taste of homemade goodness.
+        <br></br>
+        We also offer custom orders, so if you don't see exactly what you're looking for, contact us to discuss your special requirements and we'll make your vision come to life.
+        <br></br>
+        <br></br>
+        (click on the images to see more details*)
       </Typography>
 
       {Object.entries(menuCategories).map(([categoryKey, category]) => (
