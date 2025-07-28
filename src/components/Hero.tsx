@@ -69,8 +69,8 @@ const Logo = styled('img')(({ theme }) => ({
 
 const Hero: React.FC = () => {
   const navigate = useNavigate();
-  const handleViewMenu = () => {
-    navigate('/menu');
+  const handleViewGallery = () => {
+    navigate('/gallery');
     window.scrollTo(0, 0);
   };
   return (
@@ -110,9 +110,9 @@ const Hero: React.FC = () => {
             },
             transition: 'all 0.3s ease',
           }}
-          onClick={handleViewMenu}
+          onClick={handleViewGallery}
         >
-          View Our Menu
+          View Our Gallery
         </Button>
       </ContentContainer>
     </HeroContainer>

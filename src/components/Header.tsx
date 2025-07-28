@@ -40,20 +40,7 @@ const Logo = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const NavButton = styled(Button)(({ theme }) => ({
-  color: '#b57edc',
-  fontFamily: '"Quicksand", sans-serif',
-  fontSize: '1.1rem',
-  margin: '0 10px',
-  textDecoration: 'none',
-  [theme.breakpoints.down('md')]: {
-    fontSize: '1rem',
-    margin: '0 5px',
-  },
-  '&:hover': {
-    backgroundColor: '#d1a6e7',
-  },
-}));
+
 
 const NavAnchor = styled('a')(({ theme }) => ({
   color: '#b57edc',
@@ -107,9 +94,16 @@ const Header: React.FC = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  const handleHomeClick = () => {
+    if (location.pathname !== '/') {
+      window.scrollTo(0, 0);
+    }
+  };
+
   const navItems = [
     { label: 'Home', href: location.pathname === '/' ? '#home' : '/', isAnchor: location.pathname === '/' },
     { label: 'Menu', href: '/menu', isAnchor: false },
+    { label: 'Gallery', href: '/gallery', isAnchor: false },
     { label: 'My Story', href: location.pathname === '/' ? '#our-story' : '/', isAnchor: location.pathname === '/' },
     { label: 'Contact', href: location.pathname === '/' ? '#contact' : '/', isAnchor: location.pathname === '/' },
   ];
@@ -127,7 +121,12 @@ const Header: React.FC = () => {
               color: '#5A3E22',
               '&:hover': { backgroundColor: 'rgba(139, 69, 19, 0.1)' }
             }}
-            onClick={handleDrawerToggle}
+            onClick={(e) => {
+              handleDrawerToggle();
+              if (item.label === 'Home' && location.pathname !== '/') {
+                handleHomeClick();
+              }
+            }}
           >
             <ListItemText 
               primary={item.label} 
@@ -176,13 +175,17 @@ const Header: React.FC = () => {
                   Home
                 </NavAnchor>
               ) : (
-                <NavLink to="/">
+                <NavLink to="/" onClick={handleHomeClick}>
                   Home
                 </NavLink>
               )}
               
               <NavLink to="/menu">
                 Menu
+              </NavLink>
+              
+              <NavLink to="/gallery">
+                Gallery
               </NavLink>
               
               {location.pathname === '/' ? (

@@ -132,7 +132,7 @@ const menuCategories = {
       },
       {
         name: 'Fiesta Spiced Rum ',
-        description: 'Fun fiesta buttercream colors on rum infused cupcakes, gold decorations, and chocolate strawberries ',
+        description: 'Fun fiesta buttercream colors on rum infused cupcakes, gold decorations, and chocolate strawberries',
         image: 'images/IMG_2860.webp',
         price: '$50',
         tags: ['Alcohol', 'Celebration', 'Number cupcakes']
@@ -158,10 +158,17 @@ const menuCategories = {
     items: [
       {
         name: 'Kolaches',
-        description: 'Soft Milk bread with cheddar cheese or jalapeno cheddar sausage ',
+        description: 'Soft Milk bread with cheddar cheese or jalapeno cheddar sausage',
         image: 'images/IMG_1436.webp',
         price: '$25/dozen',
         tags: ['Bread', 'Sausage',]
+      },
+      {
+        name: 'Jumbo Blueberry Muffins',
+        description: 'Jumbo blueberry muffins with blueberries and streusel topping',
+        image: 'images/IMG_2980.webp',
+        price: '$30/dozen',
+        tags: ['Blueberry', 'Muffins', 'Streusel']
       },
       {
         name: 'Guava Cheesecake Buns',
@@ -176,6 +183,20 @@ const menuCategories = {
         image: 'images/IMG_2954.webp',
         price: '$25-35 per dozen',
         tags: ['Muffins', 'Guava', 'Sweet/Tart']
+      },
+      {
+        name: "Coffee Cake",
+        description: 'Coffee cake with brown sugar, cinnamon streusel',
+        image: 'images/IMG_3180.webp',
+        price: '$2.50/slice',
+        tags: ['Coffee', 'Cake', 'Brown sugar']
+      },
+      {
+        name: "Mini Zucchini Loaves",
+        description: 'Mini zucchini bread with icing glaze',
+        image: 'images/IMG_1111.webp',
+        price: '$20/8 Mini Loaves or $24/Full loaf',
+        tags: ['Zucchini', 'Bread', 'Icing']
       },
       /*{
         name: 'Cinnamon Rolls',
@@ -194,29 +215,8 @@ const menuCategories = {
         description: 'Any occasion needs chocolate covered strawberries! From Mothers Day to Birthdays to Valentines Day! ',
         image: 'images/IMG_1907.webp',
         price: '$25/dozen',
-        tags: ['Chocolate', 'Strawberry', 'tajin strawberries']
+        tags: ['Chocolate', 'Strawberry', 'Tajin strawberries']
       },
-      {
-        name: 'Brownies',
-        description: 'Rich chocolate brownies, flavors include- Mexican chocolate, Sweet potato, and Brookie',
-        image: 'images/backgroundformainpage.png',
-        price: '$25/dozen',
-        tags: ['Sweet potato', 'Chocolate', 'Brookie']
-      },
-      {
-        name: "Grandma Rene's Blueberry Banana Cheesecake ",
-        description: 'Delicious no-bake cheese cake with blueberry filling, banana slices, and whipped cream topping',
-        image: 'images/backgroundformainpage.png',
-        price: '$25/pie',
-        tags: ['Blueberry', 'Cheesecake', 'Banana']
-      },
-      {
-        name: 'Pecan Pie',
-        description: 'Tradional pecan pie, perfect all year round ',
-        image: 'images/backgroundformainpage.png',
-        price: '$20/dozen',
-        tags: ['Pie', 'Pecan', 'Holidays']
-      }
     ]
   }
 };

@@ -6,6 +6,7 @@ import { Box } from '@mui/material';
 import Header from './components/Header';
 import Home from './components/Home';
 import Menu from './components/Menu';
+import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import FloatingCupcake from './components/FloatingCupcake';
 import './smooth-scroll.css';
@@ -97,6 +98,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/menu" element={<Menu />} />
+            <Route path="/gallery" element={<Gallery />} />
           </Routes>
           <Footer />
           <FloatingCupcake />
