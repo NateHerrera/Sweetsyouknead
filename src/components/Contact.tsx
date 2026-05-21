@@ -4,65 +4,48 @@ import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 
 const ContactContainer = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(8, 0),
-  background: `url('/rustic-bg.png') repeat`,
+  padding: theme.spacing(4, 0, 10),
   position: 'relative',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: 'rgba(255, 248, 220, 0.95)',
-  },
 }));
 
 const ContactForm = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
-  background: '#fff',
-  borderRadius: '8px',
-  boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(255,249,245,0.98) 100%)',
+  borderRadius: '28px',
+  border: '1px solid rgba(200, 166, 95, 0.18)',
+  boxShadow: '0 22px 48px rgba(107, 76, 67, 0.09)',
   position: 'relative',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: -10,
-    left: -10,
-    right: -10,
-    bottom: -10,
-    border: '2px solid #DEB887',
-    borderRadius: '12px',
-    zIndex: -1,
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(3),
   },
-}));
-
-const ContactTitle = styled(Typography)(({ theme }) => ({
-  fontFamily: '"Caveat", cursive',
-  fontSize: '2.5rem',
-  color: theme.palette.primary.main,
-  textAlign: 'center',
-  marginBottom: theme.spacing(4),
 }));
 
 const StyledTextField = styled(TextField)(({ theme }) => ({
   marginBottom: theme.spacing(3),
   '& .MuiOutlinedInput-root': {
+    borderRadius: 16,
+    backgroundColor: 'rgba(255,255,255,0.7)',
     '& fieldset': {
-      borderColor: '#DEB887',
+      borderColor: 'rgba(200, 166, 95, 0.35)',
     },
     '&:hover fieldset': {
       borderColor: theme.palette.primary.main,
     },
+    '&.Mui-focused fieldset': {
+      borderWidth: 1,
+    },
+  },
+  '& .MuiInputLabel-root.Mui-focused': {
+    color: theme.palette.primary.main,
   },
 }));
 
 const SubmitButton = styled(Button)(({ theme }) => ({
-  fontFamily: '"Caveat", cursive',
-  fontSize: '1.2rem',
   padding: theme.spacing(1, 4),
   background: theme.palette.primary.main,
   color: '#fff',
+  borderRadius: '999px',
+  boxShadow: '0 12px 26px rgba(199, 130, 147, 0.24)',
   '&:hover': {
     background: theme.palette.primary.dark,
   },
@@ -73,9 +56,9 @@ const ContactInfo = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   marginBottom: theme.spacing(2),
   '& img': {
-    width: '24px',
-    height: '24px',
-    marginRight: theme.spacing(2),
+    width: '22px',
+    height: '22px',
+    marginRight: theme.spacing(1.5),
   },
 }));
 
@@ -127,7 +110,7 @@ const Contact: React.FC = () => {
 
   return (
     <ContactContainer>
-      <Box sx={{ position: 'relative', zIndex: 1 }}>
+      <Box sx={{ position: 'relative', zIndex: 1, px: 2 }}>
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={12} md={6}>
             <motion.div
@@ -139,9 +122,16 @@ const Contact: React.FC = () => {
               <ContactForm>
                 <Typography
                   variant="h2"
-                  sx={{ color: '#5A3E22', fontFamily: '"Caveat", cursive', mb: 2 }}
+                  sx={{
+                    color: '#4f372f',
+                    fontFamily: '"Cormorant Garamond", serif',
+                    mb: 1,
+                  }}
                 >
                   Get in Touch
+                </Typography>
+                <Typography sx={{ color: 'text.secondary', mb: 3 }}>
+                  Share your event details and we will help you create something beautiful, thoughtful, and made just for the occasion.
                 </Typography>
                 
                 {submitStatus.type && (
@@ -195,7 +185,25 @@ const Contact: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Box sx={{ mt: 4 }}>
+              <Box
+                sx={{
+                  mt: 4,
+                  p: 3,
+                  borderRadius: '24px',
+                  backgroundColor: 'rgba(255,252,248,0.72)',
+                  border: '1px solid rgba(200, 166, 95, 0.18)',
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontFamily: '"Cormorant Garamond", serif',
+                    fontSize: '2rem',
+                    color: '#4f372f',
+                    mb: 2,
+                  }}
+                >
+                  Contact Details
+                </Typography>
                 <ContactInfo>
                   <img src="/images/location-arrow-svgrepo-com.svg" alt="Location" />
                   <Typography color="#5A3E22">TBA</Typography>

@@ -4,66 +4,89 @@ import { styled } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 
 const HeroContainer = styled(Box)(({ theme }) => ({
-  minHeight: '100vh',
+  minHeight: 'calc(100vh - 86px)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  background: `linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
-    url('/images/newbackgroundindex.jpeg')`,
+  background: [
+    'linear-gradient(115deg, rgba(253, 248, 244, 0.9) 12%, rgba(253, 248, 244, 0.62) 48%, rgba(89, 61, 52, 0.24) 100%)',
+    "url('/images/newbackgroundindex.jpeg')",
+  ].join(','),
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   position: 'relative',
+  padding: theme.spacing(4, 2, 7),
+  [theme.breakpoints.down('md')]: {
+    minHeight: 'auto',
+    padding: theme.spacing(6, 2, 6),
+  },
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    inset: theme.spacing(3),
+    border: '1px solid rgba(255, 245, 238, 0.45)',
+    borderRadius: 32,
+    pointerEvents: 'none',
+    [theme.breakpoints.down('sm')]: {
+      inset: theme.spacing(1.5),
+      borderRadius: 24,
+    },
+  },
 }));
 
 const ContentContainer = styled(Container)(({ theme }) => ({
   textAlign: 'center',
   position: 'relative',
   zIndex: 1,
-  padding: theme.spacing(4),
-  maxWidth: '800px',
+  padding: theme.spacing(5),
+  width: '100%',
+  maxWidth: '1200px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  '& .hero-title': {
-    fontFamily: '"Caveat", cursive',
-    fontSize: '3.5rem',
-    color: theme.palette.primary.main,
-    marginBottom: theme.spacing(2),
-    textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
-  },
-  '& .hero-subtitle': {
-    fontFamily: '"Caveat", cursive',
-    fontSize: '1.8rem',
-    color: theme.palette.secondary.main,
-    marginBottom: theme.spacing(4),
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  backgroundColor: 'rgba(255, 252, 248, 0.76)',
+  border: '1px solid rgba(255, 255, 255, 0.4)',
+  borderRadius: 28,
+  boxShadow: '0 24px 60px rgba(89, 61, 52, 0.14)',
+  backdropFilter: 'blur(8px)',
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(3),
   },
 }));
 
-const Ribbon = styled(Box)(({ theme }) => ({
-  width: '100%',
-  height: '6px',
-  margin: '0 0 20px 0',
-  background: 'repeating-linear-gradient(135deg, #E8AEB7, #E8AEB7 10px, #A8E063 10px, #A8E063 20px)',
-  borderRadius: '2px',
-  boxShadow: '0 1px 2px rgba(0,0,0,0.04)'
+const Eyebrow = styled(Box)(({ theme }) => ({
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: theme.spacing(1.5),
+  padding: theme.spacing(1, 1.5),
+  borderRadius: '999px',
+  backgroundColor: 'rgba(255, 255, 255, 0.72)',
+  border: '1px solid rgba(200, 166, 95, 0.24)',
+  color: '#a57b45',
+  fontSize: '0.78rem',
+  fontWeight: 700,
+  letterSpacing: '0.18em',
+  textTransform: 'uppercase',
+  marginBottom: theme.spacing(2.5),
 }));
+
+const Dot = styled('span')({
+  width: 6,
+  height: 6,
+  borderRadius: '50%',
+  backgroundColor: '#c78293',
+});
 
 const Logo = styled('img')(({ theme }) => ({
-  width: '70vw',
-  marginLeft: '12vw',
+  width: 'min(280px, 62vw)',
+  marginBottom: theme.spacing(2.5),
   height: 'auto',
-  [theme.breakpoints.up('sm')]: {
-    width: '50vw',
-    marginLeft: '16vw',
-  },
-  [theme.breakpoints.up('md')]: {
-    maxWidth: 400,
-    marginLeft: 0,
-  },
-  [theme.breakpoints.up('lg')]: {
-    maxWidth: 500,
-    marginLeft: 0,
+  filter: 'drop-shadow(0 12px 24px rgba(92, 70, 63, 0.12))',
+  [theme.breakpoints.down('sm')]: {
+    width: 'min(220px, 58vw)',
   },
 }));
 
@@ -77,43 +100,80 @@ const Hero: React.FC = () => {
     <HeroContainer>
       <ContentContainer>
         <Logo src="/images/simplyprecioushomepagelogo.png" alt="Simply Precious Bakery Logo" />
-        <Ribbon />
+        <Eyebrow>
+          Custom cakes
+          <Dot />
+          Elegant desserts
+        </Eyebrow>
         <Typography
           variant="h1"
-          sx={{ color: '#000', fontFamily: '"Caveat", cursive', mb: 2 }}
+          sx={{
+            color: '#4f372f',
+            fontFamily: '"Cormorant Garamond", serif',
+            fontSize: { xs: '3rem', sm: '4rem', md: '4.8rem' },
+            lineHeight: 0.95,
+            mb: 2,
+            maxWidth: '10ch',
+            mx: 'auto',
+          }}
         >
-          Artisan Bakery
+          Baked with elegance, made to feel personal
         </Typography>
         <Typography
-          variant="h2"
-          sx={{ color: '#000', fontFamily: '"Caveat", cursive', mb: 4 }}
-        >
-          Handcrafted with love, baked with passion
-        </Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
+          variant="body1"
           sx={{
-            fontFamily: '"Caveat", cursive',
-            fontSize: '1.5rem',
-            padding: '12px 32px',
-            borderRadius: '30px',
-            boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-            backgroundColor: '#b57edc',
-            color: '#fff',
-            '&:hover': {
-              backgroundColor: '#a06fc4',
-              color: '#fff',
-              transform: 'translateY(-2px)',
-              boxShadow: '0 6px 12px rgba(0,0,0,0.15)',
-            },
-            transition: 'all 0.3s ease',
+            color: '#6f5a52',
+            fontSize: { xs: '1rem', sm: '1.05rem', md: '1.1rem' },
+            maxWidth: '54ch',
+            mb: 4,
+            mx: 'auto',
           }}
-          onClick={handleViewGallery}
         >
-          View Our Gallery
-        </Button>
+          Thoughtful cakes, pastries, and desserts designed with a soft romantic finish. Simply Precious Bakery brings a polished, handcrafted touch to birthdays, showers, and every sweet celebration in between.
+        </Typography>
+        <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap' }}>
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            sx={{
+              px: 3.5,
+              py: 1.4,
+              borderRadius: '999px',
+              boxShadow: '0 12px 26px rgba(199, 130, 147, 0.28)',
+              '&:hover': {
+                transform: 'translateY(-2px)',
+                boxShadow: '0 16px 30px rgba(199, 130, 147, 0.32)',
+              },
+              transition: 'all 0.25s ease',
+            }}
+            onClick={handleViewGallery}
+          >
+            View Gallery
+          </Button>
+          <Button
+            variant="outlined"
+            size="large"
+            sx={{
+              px: 3.5,
+              py: 1.4,
+              borderRadius: '999px',
+              borderColor: 'rgba(200, 166, 95, 0.5)',
+              color: '#4f372f',
+              backgroundColor: 'rgba(255,255,255,0.52)',
+              '&:hover': {
+                borderColor: '#c8a65f',
+                backgroundColor: 'rgba(255,255,255,0.78)',
+              },
+            }}
+            onClick={() => {
+              navigate('/menu');
+              window.scrollTo(0, 0);
+            }}
+          >
+            Explore Menu
+          </Button>
+        </Box>
       </ContentContainer>
     </HeroContainer>
   );

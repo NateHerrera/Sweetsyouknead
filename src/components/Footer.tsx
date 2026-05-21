@@ -3,7 +3,7 @@ import { Box, Container, Typography, Grid, Link } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const FooterContainer = styled(Box)(({ theme }) => ({
-  backgroundColor: '#E8AEB7',
+  background: 'linear-gradient(180deg, #f6e0e5 0%, #f4d8df 100%)',
   color: '#5A3E22',
   padding: theme.spacing(6, 0),
   position: 'relative',
@@ -18,15 +18,15 @@ const FooterContainer = styled(Box)(({ theme }) => ({
       45deg,
       ${theme.palette.secondary.main},
       ${theme.palette.secondary.main} 10px,
-      #D291BC 10px,
-      #D291BC 20px
+      #e5c4cc 10px,
+      #e5c4cc 20px
     )`,
   }
 }));
 
 const SocialIcon = styled(Link)(({ theme }) => ({
   color: theme.palette.primary.contrastText,
-  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  backgroundColor: 'rgba(255, 255, 255, 0.45)',
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -34,9 +34,11 @@ const SocialIcon = styled(Link)(({ theme }) => ({
   height: 48,
   margin: theme.spacing(1),
   borderRadius: '50%',
-  transition: 'background-color 0.3s ease',
+  border: '1px solid rgba(200, 166, 95, 0.18)',
+  transition: 'background-color 0.3s ease, transform 0.3s ease',
   '&:hover': {
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backgroundColor: 'rgba(255, 255, 255, 0.72)',
+    transform: 'translateY(-2px)',
     textDecoration: 'none',
   },
   '& img': {
@@ -46,7 +48,7 @@ const SocialIcon = styled(Link)(({ theme }) => ({
 }));
 
 const FooterLink = styled(Link)(({ theme }) => ({
-  color: theme.palette.primary.contrastText,
+  color: '#5A3E22',
   textDecoration: 'none',
   '&:hover': {
     textDecoration: 'underline',
@@ -75,7 +77,7 @@ const Footer: React.FC = () => {
             <Typography
               variant="h6"
               sx={{
-                fontFamily: '"Caveat", cursive',
+                fontFamily: '"Cormorant Garamond", serif',
                 fontSize: '2rem',
                 marginBottom: 2,
               }}
@@ -126,7 +128,7 @@ const Footer: React.FC = () => {
             <Typography
               variant="h6"
               sx={{
-                fontFamily: '"Caveat", cursive',
+                fontFamily: '"Cormorant Garamond", serif',
                 fontSize: '1.8rem',
                 marginBottom: 2,
               }}
@@ -158,7 +160,7 @@ const Footer: React.FC = () => {
         </Grid>
         <Box
           sx={{
-            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+            borderTop: '1px solid rgba(200, 166, 95, 0.22)',
             marginTop: 4,
             paddingTop: 2,
             textAlign: 'center',

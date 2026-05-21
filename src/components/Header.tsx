@@ -1,85 +1,71 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, Button, Box, IconButton, Drawer, List, ListItem, ListItemText, useTheme, useMediaQuery } from '@mui/material';
+import { AppBar, Toolbar, Typography, Box, IconButton, Drawer, List, ListItemButton, ListItemText, useTheme, useMediaQuery } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Link, useLocation } from 'react-router-dom';
-// import MenuIcon from '@mui/icons-material/Menu';
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  backgroundColor: 'rgba(255, 248, 220, 0.95)',
-  boxShadow: 'none',
-  borderBottom: '2px solid #DEB887',
+  backgroundColor: 'rgba(255, 251, 247, 0.9)',
+  boxShadow: '0 14px 40px rgba(107, 76, 67, 0.08)',
+  borderBottom: '1px solid rgba(200, 166, 95, 0.22)',
+  backdropFilter: 'blur(16px)',
 }));
 
 const Logo = styled(Typography)(({ theme }) => ({
-  fontFamily: '"Caveat", cursive',
-  fontSize: '2.5rem',
-  color: '#b57edc',
-  textAlign: 'center',
-  flexGrow: 1,
+  fontFamily: '"Cormorant Garamond", serif',
+  fontSize: '2rem',
+  fontWeight: 600,
+  letterSpacing: '0.05em',
+  color: '#4f372f',
+  textTransform: 'uppercase',
   [theme.breakpoints.down('sm')]: {
-    fontSize: '2rem',
-  },
-  [theme.breakpoints.down('xs')]: {
-    fontSize: '1.8rem',
-  },
-  '&::before, &::after': {
-    content: '""',
-    display: 'inline-block',
-    width: '30px',
-    height: '30px',
-    backgroundImage: 'url("/wheat-icon.png")',
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    margin: '0 15px',
-    verticalAlign: 'middle',
-    [theme.breakpoints.down('sm')]: {
-      width: '20px',
-      height: '20px',
-      margin: '0 8px',
-    },
+    fontSize: '1.45rem',
   },
 }));
 
-
-
 const NavAnchor = styled('a')(({ theme }) => ({
-  color: '#b57edc',
-  fontFamily: '"Quicksand", sans-serif',
-  fontSize: '1.1rem',
-  margin: '0 10px',
+  color: '#7a6258',
+  fontFamily: '"Manrope", sans-serif',
+  fontSize: '0.95rem',
+  fontWeight: 600,
+  letterSpacing: '0.08em',
+  margin: '0 4px',
   textDecoration: 'none',
-  padding: '6px 16px',
-  borderRadius: '4px',
-  transition: 'background-color 0.3s ease',
+  textTransform: 'uppercase',
+  padding: '10px 14px',
+  borderRadius: '999px',
+  transition: 'all 0.25s ease',
   cursor: 'pointer',
   display: 'inline-block',
   [theme.breakpoints.down('md')]: {
-    fontSize: '1rem',
-    margin: '0 5px',
-    padding: '4px 12px',
+    fontSize: '0.88rem',
+    padding: '8px 12px',
   },
   '&:hover': {
-    backgroundColor: '#d1a6e7',
+    backgroundColor: 'rgba(199, 130, 147, 0.12)',
+    color: '#4f372f',
     textDecoration: 'none',
   },
 }));
 
 const NavLink = styled(Link)(({ theme }) => ({
-  color: '#b57edc',
-  fontFamily: '"Quicksand", sans-serif',
-  fontSize: '1.1rem',
-  margin: '0 10px',
+  color: '#7a6258',
+  fontFamily: '"Manrope", sans-serif',
+  fontSize: '0.95rem',
+  fontWeight: 600,
+  letterSpacing: '0.08em',
+  margin: '0 4px',
   textDecoration: 'none',
-  padding: '6px 16px',
-  borderRadius: '4px',
-  transition: 'background-color 0.3s ease',
+  textTransform: 'uppercase',
+  padding: '10px 14px',
+  borderRadius: '999px',
+  transition: 'all 0.25s ease',
   [theme.breakpoints.down('md')]: {
-    fontSize: '1rem',
-    margin: '0 5px',
-    padding: '4px 12px',
+    fontSize: '0.88rem',
+    padding: '8px 12px',
   },
   '&:hover': {
-    backgroundColor: '#d1a6e7',
+    backgroundColor: 'rgba(199, 130, 147, 0.12)',
+    color: '#4f372f',
     textDecoration: 'none',
   },
 }));
@@ -109,17 +95,30 @@ const Header: React.FC = () => {
   ];
 
   const drawer = (
-    <Box sx={{ width: 250, pt: 2 }}>
+    <Box sx={{ width: 280, pt: 2, px: 1.5 }}>
+      <Typography
+        sx={{
+          px: 2,
+          pb: 2,
+          fontFamily: '"Cormorant Garamond", serif',
+          fontSize: '1.5rem',
+          color: '#4f372f',
+        }}
+      >
+        Simply Precious
+      </Typography>
       <List>
         {navItems.map((item) => (
-          <ListItem 
+          <ListItemButton
             key={item.label} 
             component={item.isAnchor ? 'a' : Link}
             href={item.isAnchor ? item.href : undefined}
             to={!item.isAnchor ? item.href : undefined}
             sx={{ 
+              borderRadius: '999px',
+              mb: 0.5,
               color: '#5A3E22',
-              '&:hover': { backgroundColor: 'rgba(139, 69, 19, 0.1)' }
+              '&:hover': { backgroundColor: 'rgba(199, 130, 147, 0.1)' }
             }}
             onClick={(e) => {
               handleDrawerToggle();
@@ -131,11 +130,16 @@ const Header: React.FC = () => {
             <ListItemText 
               primary={item.label} 
               sx={{ 
-                fontFamily: '"Quicksand", sans-serif',
-                fontSize: '1.1rem',
+                '& .MuiTypography-root': {
+                  fontFamily: '"Manrope", sans-serif',
+                  fontSize: '0.95rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                }
               }}
             />
-          </ListItem>
+          </ListItemButton>
         ))}
       </List>
     </Box>
@@ -148,28 +152,55 @@ const Header: React.FC = () => {
           sx={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: { xs: 'center', md: 'flex-start' },
-            position: 'relative',
-            minHeight: { xs: 56, sm: 64 },
-            px: { xs: 0, sm: 2 },
+            justifyContent: 'space-between',
+            minHeight: { xs: 72, md: 86 },
+            px: { xs: 2, sm: 3, md: 5 },
+            gap: 2,
           }}
         >
-          <Logo variant="h1">
-            Simply Precious Bakery
-          </Logo>
+          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <Logo variant="h1">
+              Simply Precious
+            </Logo>
+            <Typography
+              sx={{
+                fontSize: '0.72rem',
+                letterSpacing: '0.26em',
+                textTransform: 'uppercase',
+                color: '#b28a58',
+              }}
+            >
+              Bakery and Custom Cakes
+            </Typography>
+          </Box>
           
           {isMobile ? (
             <IconButton
-              color="inherit"
+              color="default"
               aria-label="open drawer"
-              edge="start"
               onClick={handleDrawerToggle}
-              sx={{ color: '#b57edc' }}
+              sx={{
+                color: '#4f372f',
+                border: '1px solid rgba(200, 166, 95, 0.35)',
+                backgroundColor: 'rgba(255,255,255,0.65)',
+                width: 42,
+                height: 42,
+              }}
             >
               ☰
             </IconButton>
           ) : (
-            <Box sx={{ display: 'flex', gap: 2 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                gap: 0.5,
+                alignItems: 'center',
+                p: 0.75,
+                borderRadius: '999px',
+                backgroundColor: 'rgba(255,255,255,0.55)',
+                border: '1px solid rgba(200, 166, 95, 0.2)',
+              }}
+            >
               {location.pathname === '/' ? (
                 <NavAnchor href="#home">
                   Home
@@ -211,8 +242,7 @@ const Header: React.FC = () => {
           )}
         </Toolbar>
       </StyledAppBar>
-      {/* Spacer to prevent content from being hidden behind the fixed navbar */}
-      <Box sx={{ height: { xs: 56, sm: 64 } }} />
+      <Box sx={{ height: { xs: 72, md: 86 } }} />
       
       <Drawer
         variant="temporary"
@@ -225,8 +255,8 @@ const Header: React.FC = () => {
           display: { xs: 'block', md: 'none' },
           '& .MuiDrawer-paper': { 
             boxSizing: 'border-box', 
-            width: 250,
-            backgroundColor: 'rgba(255, 248, 220, 0.98)',
+            width: 280,
+            backgroundColor: 'rgba(255, 251, 247, 0.98)',
           },
         }}
       >

@@ -14,40 +14,84 @@ import './smooth-scroll.css';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#b57edc', // Lavender for text and buttons
+      main: '#c78293',
+      dark: '#a96074',
+      light: '#f1d4dc',
+      contrastText: '#fffdf9',
     },
     secondary: {
-      main: '#E1A95F', // Keep gold for accents
+      main: '#c8a65f',
+      dark: '#a98643',
+      light: '#ebdcc0',
     },
     background: {
-      paper: '#FFE0B2',
+      default: '#fff8f3',
+      paper: '#fffdf9',
     },
     text: {
-      primary: '#b57edc', // Lavender for all text
-      secondary: '#b57edc',
+      primary: '#5c463f',
+      secondary: '#8b6f66',
     },
+    divider: 'rgba(201, 166, 95, 0.32)',
   },
   typography: {
-    fontFamily: '"Quicksand", "Caveat", sans-serif',
+    fontFamily: '"Manrope", sans-serif',
     h1: {
-      fontFamily: '"Caveat", cursive',
-      fontSize: '3.5rem',
-      color: '#b57edc',
+      fontFamily: '"Cormorant Garamond", serif',
+      fontSize: '4.25rem',
+      fontWeight: 600,
+      letterSpacing: '-0.02em',
+      color: '#4f372f',
     },
     h2: {
-      fontFamily: '"Caveat", cursive',
-      fontSize: '2.8rem',
-      color: '#b57edc',
+      fontFamily: '"Cormorant Garamond", serif',
+      fontSize: '3rem',
+      fontWeight: 600,
+      letterSpacing: '-0.02em',
+      color: '#4f372f',
     },
     h3: {
-      fontFamily: '"Caveat", cursive',
+      fontFamily: '"Cormorant Garamond", serif',
       fontSize: '2.2rem',
-      color: '#b57edc',
+      fontWeight: 600,
+      color: '#4f372f',
     },
     body1: {
-      fontFamily: '"Quicksand", sans-serif',
-      fontSize: '1.1rem',
-      color: '#b57edc',
+      fontFamily: '"Manrope", sans-serif',
+      fontSize: '1rem',
+      lineHeight: 1.8,
+      color: '#5c463f',
+    },
+    button: {
+      fontFamily: '"Manrope", sans-serif',
+      fontWeight: 700,
+      letterSpacing: '0.06em',
+      textTransform: 'none',
+    },
+  },
+  shape: {
+    borderRadius: 18,
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        html: {
+          scrollBehavior: 'smooth',
+        },
+        body: {
+          backgroundColor: '#fff8f3',
+          backgroundImage: [
+            'radial-gradient(circle at top left, rgba(234, 201, 210, 0.42), transparent 32%)',
+            'radial-gradient(circle at top right, rgba(232, 214, 181, 0.35), transparent 28%)',
+          ].join(','),
+        },
+        '::selection': {
+          backgroundColor: 'rgba(199, 130, 147, 0.24)',
+        },
+        '#root': {
+          minHeight: '100vh',
+        },
+      },
     },
   },
 });
@@ -91,7 +135,8 @@ function App() {
           sx={{
             position: 'relative',
             minHeight: '100vh',
-            background: 'linear-gradient(135deg, #FFB6C1 0%, #A8E063 100%)',
+            background:
+              'linear-gradient(180deg, rgba(255, 249, 245, 0.97) 0%, rgba(255, 245, 240, 0.94) 48%, rgba(250, 239, 232, 0.98) 100%)',
           }}
         >
           <Header />

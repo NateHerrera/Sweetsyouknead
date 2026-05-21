@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles';
 import { Link, useNavigate } from 'react-router-dom';
 
 const MenuContainer = styled(Container)(({ theme }) => ({
-  padding: theme.spacing(8, 0),
+  padding: theme.spacing(10, 0),
   position: 'relative',
 }));
 
@@ -12,23 +12,24 @@ const MenuItemCard = styled(Card)(({ theme }) => ({
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
-  borderRadius: '15px',
+  borderRadius: '24px',
   overflow: 'hidden',
-  boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+  border: '1px solid rgba(200, 166, 95, 0.18)',
+  boxShadow: '0 18px 40px rgba(107, 76, 67, 0.08)',
   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
   '&:hover': {
-    transform: 'translateY(-5px)',
-    boxShadow: '0 6px 12px rgba(0,0,0,0.15)',
+    transform: 'translateY(-6px)',
+    boxShadow: '0 24px 48px rgba(107, 76, 67, 0.12)',
   },
   '& .MuiCardMedia-root': {
-    height: 200,
+    height: 220,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
   '& .MuiCardContent-root': {
     flexGrow: 1,
     padding: theme.spacing(3),
-    background: theme.palette.background.paper,
+    background: 'linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,248,244,0.96) 100%)',
   }
 }));
 
@@ -72,14 +73,24 @@ const MenuPreview: React.FC = () => {
         component="h2"
         align="center"
         sx={{
-          fontFamily: '"Caveat", cursive',
-          fontSize: '3rem',
-          color: '#000',
-          marginBottom: 4,
-          textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
+          fontFamily: '"Cormorant Garamond", serif',
+          fontSize: { xs: '2.7rem', md: '3.5rem' },
+          color: '#4f372f',
+          marginBottom: 1.5,
         }}
       >
         What We Offer
+      </Typography>
+      <Typography
+        align="center"
+        sx={{
+          maxWidth: 680,
+          mx: 'auto',
+          mb: 5,
+          color: 'text.secondary',
+        }}
+      >
+        A small collection of signature favorites, finished with soft detail and made for celebrations that deserve something a little more special.
       </Typography>
       <Grid container spacing={4}>
         {menuItems.map((item, index) => (
@@ -95,9 +106,9 @@ const MenuPreview: React.FC = () => {
                   variant="h5"
                   component="h3"
                   sx={{
-                    fontFamily: '"Caveat", cursive',
-                    fontSize: '1.8rem',
-                    color: '#000',
+                    fontFamily: '"Cormorant Garamond", serif',
+                    fontSize: '2rem',
+                    color: '#4f372f',
                     marginBottom: 1,
                   }}
                 >
@@ -105,7 +116,7 @@ const MenuPreview: React.FC = () => {
                 </Typography>
                 <Typography
                   variant="body1"
-                  color="#000"
+                  color="text.secondary"
                   sx={{ marginBottom: 2 }}
                 >
                   {item.description}
@@ -113,9 +124,9 @@ const MenuPreview: React.FC = () => {
                 <Typography
                   variant="h6"
                   sx={{
-                    fontFamily: '"Caveat", cursive',
+                    fontFamily: '"Cormorant Garamond", serif',
                     fontSize: '1.4rem',
-                    color: '#000',
+                    color: '#b28a58',
                   }}
                 >
                   {item.price}
@@ -131,20 +142,16 @@ const MenuPreview: React.FC = () => {
           color="primary"
           size="large"
           sx={{
-            fontFamily: '"Caveat", cursive',
-            fontSize: '1.5rem',
-            padding: '10px 30px',
-            borderRadius: '30px',
-            borderWidth: '2px',
+            padding: '12px 30px',
+            borderRadius: '999px',
             textDecoration: 'none',
-            backgroundColor: '#b57edc',
+            backgroundColor: '#c78293',
             color: '#fff',
-            borderColor: '#b57edc',
+            borderColor: '#c78293',
             '&:hover': {
-              backgroundColor: '#a06fc4',
+              backgroundColor: '#a96074',
               color: '#fff',
-              borderColor: '#a06fc4',
-              borderWidth: '2px',
+              borderColor: '#a96074',
             },
           }}
           onClick={handleViewFullMenu}
