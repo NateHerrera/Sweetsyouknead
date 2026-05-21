@@ -47,16 +47,6 @@ const SocialIcon = styled(Link)(({ theme }) => ({
   },
 }));
 
-const FooterLink = styled(Link)(({ theme }) => ({
-  color: '#5A3E22',
-  textDecoration: 'none',
-  '&:hover': {
-    textDecoration: 'underline',
-  },
-  display: 'block',
-  marginBottom: theme.spacing(1),
-}));
-
 const ContactInfo = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',

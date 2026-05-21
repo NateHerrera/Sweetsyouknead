@@ -7,8 +7,6 @@ import {
   Card, 
   CardMedia, 
   CardContent, 
-  useTheme, 
-  useMediaQuery,
   IconButton,
   Dialog,
   DialogContent,
@@ -325,7 +323,6 @@ const FilterChip = styled(Chip)(({ theme }) => ({
 }));
 
 const Gallery: React.FC = () => {
-  const theme = useTheme();
   const [selectedImage, setSelectedImage] = useState<typeof galleryData[0] | null>(null);
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');

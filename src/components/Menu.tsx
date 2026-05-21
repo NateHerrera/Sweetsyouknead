@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Container, Typography, Card, CardContent, CardMedia, Button, Chip, Dialog, IconButton, Grid } from '@mui/material';
+import { Box, Container, Typography, Card, CardContent, CardMedia, Button, Chip, Dialog, IconButton } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';

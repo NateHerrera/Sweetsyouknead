@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const MenuContainer = styled(Container)(({ theme }) => ({
   padding: theme.spacing(10, 0),
