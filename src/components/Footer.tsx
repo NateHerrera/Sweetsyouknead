@@ -51,6 +51,9 @@ const ContactInfo = styled(Box)(({ theme }) => ({
 	display: "flex",
 	alignItems: "center",
 	marginBottom: theme.spacing(1),
+	[theme.breakpoints.down("md")]: {
+		justifyContent: "center",
+	},
 	"& img": {
 		width: "20px",
 		height: "20px",
@@ -84,15 +87,25 @@ const Footer: React.FC = () => {
 								fontFamily: '"Cormorant Garamond", serif',
 								fontSize: "2rem",
 								marginBottom: 2,
+								textAlign: { xs: "center", md: "left" },
 							}}
 						>
 							Precious Sol Bakery
 						</Typography>
-						<Typography variant="body2" sx={{ marginBottom: 2 }}>
+						<Typography
+							variant="body2"
+							sx={{ marginBottom: 2, textAlign: { xs: "center", md: "left" } }}
+						>
 							Handcrafted with love, baked with passion. We create delicious
 							treats that bring joy to your special moments.
 						</Typography>
-						<Box sx={{ display: "flex", justifyContent: "flex-start" }}>
+						<Box
+							sx={{
+								display: "flex",
+								justifyContent: { xs: "center", md: "flex-start" },
+								flexWrap: "wrap",
+							}}
+						>
 							<SocialIcon
 								href="https://www.facebook.com/people/Sweets-You-Knead/100091789056293/?mibextid=wwXIfr&rdid=oz5IaBjuEKCbcqPC&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16yAzujpv8%2F%3Fmibextid%3DwwXIfr"
 								target="_blank"
@@ -141,6 +154,7 @@ const Footer: React.FC = () => {
 								fontFamily: '"Cormorant Garamond", serif',
 								fontSize: "1.8rem",
 								marginBottom: 2,
+								textAlign: { xs: "center", md: "right" },
 							}}
 						>
 							Contact Us
@@ -150,15 +164,28 @@ const Footer: React.FC = () => {
 								src="/images/location-arrow-svgrepo-com.svg"
 								alt="Location"
 							/>
-							<Typography variant="body2">San Antonio, TX</Typography>
+							<Typography
+								variant="body2"
+								sx={{ textAlign: { xs: "center", md: "left" } }}
+							>
+								San Antonio, TX
+							</Typography>
 						</ContactInfo>
 						<ContactInfo>
 							<img src="/images/clock-0900-svgrepo-com.svg" alt="Time" />
-							<Typography variant="body2">Mon-Sat: 7am-7pm</Typography>
+							<Typography
+								variant="body2"
+								sx={{ textAlign: { xs: "center", md: "left" } }}
+							>
+								Mon-Sat: 7am-7pm
+							</Typography>
 						</ContactInfo>
 						<ContactInfo>
 							<img src="/images/email-part-2-svgrepo-com.svg" alt="email" />
-							<Typography variant="body2">
+							<Typography
+								variant="body2"
+								sx={{ textAlign: { xs: "center", md: "left" } }}
+							>
 								precioussolbakery@gmail.com
 							</Typography>
 						</ContactInfo>
