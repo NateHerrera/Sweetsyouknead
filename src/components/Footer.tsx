@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
 								/>
 							</SocialIcon>
 							<SocialIcon
-								href="https://www.instagram.com/simplypreciousbakery/"
+								href="https://www.instagram.com/precioussolbakery/"
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="Instagram"
@@ -150,7 +150,7 @@ const Footer: React.FC = () => {
 								src="/images/location-arrow-svgrepo-com.svg"
 								alt="Location"
 							/>
-							<Typography variant="body2">TBA</Typography>
+							<Typography variant="body2">San Antonio, TX</Typography>
 						</ContactInfo>
 						<ContactInfo>
 							<img src="/images/clock-0900-svgrepo-com.svg" alt="Time" />
@@ -158,7 +158,9 @@ const Footer: React.FC = () => {
 						</ContactInfo>
 						<ContactInfo>
 							<img src="/images/email-part-2-svgrepo-com.svg" alt="email" />
-							<Typography variant="body2">sweetsyouknead@gmail.com</Typography>
+							<Typography variant="body2">
+								precioussolbakery@gmail.com
+							</Typography>
 						</ContactInfo>
 					</Grid>
 				</Grid>
